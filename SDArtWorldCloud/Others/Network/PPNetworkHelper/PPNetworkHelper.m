@@ -122,15 +122,18 @@ static AFHTTPSessionManager *_sessionManager;
     NSURLSessionTask *sessionTask = [_sessionManager GET:URL parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
         if (_isOpenLog) {PPLog(@"responseObject = %@",responseObject);}
         [[self allSessionTask] removeObject:task];
-        success ? success(responseObject) : nil;
-        //对数据进行异步缓存
-        responseCache!=nil ? [PPNetworkCache setHttpCache:responseObject URL:URL parameters:parameters] : nil;
-        
+        if ([responseObject[@"error"]integerValue] == 1001) {
+            [TLUIUtility showErrorHint:@"账号在其他设备登录,请稍后再试"];
+        }
+        else{
+            success ? success(responseObject) : nil;
+            //对数据进行异步缓存
+            responseCache!=nil ? [PPNetworkCache setHttpCache:responseObject URL:URL parameters:parameters] : nil;
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        [TLUIUtility showErrorHint:@"获取失败~"];
         if (_isOpenLog) {PPLog(@"error = %@",error);}
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
@@ -157,12 +160,17 @@ static AFHTTPSessionManager *_sessionManager;
         
         if (_isOpenLog) {PPLog(@"responseObject = %@",responseObject);}
         [[self allSessionTask] removeObject:task];
-        success ? success(responseObject) : nil;
-        //对数据进行异步缓存
-        responseCache!=nil ? [PPNetworkCache setHttpCache:responseObject URL:URL parameters:parameters] : nil;
+        if ([responseObject[@"error"]integerValue] == 1001) {
+            [TLUIUtility showErrorHint:@"账号在其他设备登录,请稍后再试"];
+        }
+        else{
+            success ? success(responseObject) : nil;
+            //对数据进行异步缓存
+            responseCache!=nil ? [PPNetworkCache setHttpCache:responseObject URL:URL parameters:parameters] : nil;
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+         [TLUIUtility showErrorHint:@"获取失败~"];
         if (_isOpenLog) {PPLog(@"error = %@",error);}
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
@@ -328,6 +336,9 @@ static AFHTTPSessionManager *_sessionManager;
     _sessionManager = [AFHTTPSessionManager manager];
     _sessionManager.requestSerializer.timeoutInterval = 30.f;
     _sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
+//    [_sessionManager.requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [_sessionManager.requestSerializer setValue:[VAAccountManager getAccount].token_value forHTTPHeaderField:@"token-value"];
+    [_sessionManager.requestSerializer setValue:[VAAccountManager getAccount].user_role forHTTPHeaderField:@"type"];
     // 打开状态栏的等待菊花
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 }

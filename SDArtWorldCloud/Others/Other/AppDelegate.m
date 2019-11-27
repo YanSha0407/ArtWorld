@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "VATabBarController.h"
+#import "VALoginController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,9 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    VATabBarController *tabVC = [[VATabBarController alloc]init];
-    self.window.backgroundColor=VAWhiteColor;
-    self.window.rootViewController = tabVC;
+    if ([VAAccountManager getAccount]) {
+        VATabBarController *tabBarVC = [[VATabBarController alloc]init];
+        self.window.backgroundColor=VAWhiteColor;
+        self.window.rootViewController = tabBarVC;
+    }
+    else{
+        VALoginController *loginVC = [[VALoginController alloc]init];
+        self.window.backgroundColor=VAWhiteColor;
+        self.window.rootViewController = loginVC;
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }

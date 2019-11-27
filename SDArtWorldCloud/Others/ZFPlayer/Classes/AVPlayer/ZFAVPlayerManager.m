@@ -186,9 +186,9 @@ static NSString *const kPresentationSize         = @"presentationSize";
 }
 
 - (void)replay {
-    @weakify(self)
+    weakify(self)
     [self seekToTime:0 completionHandler:^(BOOL finished) {
-        @strongify(self)
+        strongify(self)
         [self play];
     }];
 }
@@ -324,9 +324,9 @@ static NSString *const kPresentationSize         = @"presentationSize";
                               context:nil];
     
     CMTime interval = CMTimeMakeWithSeconds(self.timeRefreshInterval > 0 ? self.timeRefreshInterval : 0.1, NSEC_PER_SEC);
-    @weakify(self)
+    weakify(self)
     _timeObserver = [self.player addPeriodicTimeObserverForInterval:interval queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-        @strongify(self)
+        strongify(self)
         if (!self) return;
         NSArray *loadedRanges = self.playerItem.seekableTimeRanges;
         /// 大于0才把状态改为可以播放，解决黑屏问题
@@ -340,7 +340,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
     }];
     
     _itemEndObserver = [[NSNotificationCenter defaultCenter] addObserverForName:AVPlayerItemDidPlayToEndTimeNotification object:self.playerItem queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-        @strongify(self)
+        strongify(self)
         if (!self) return;
         self.playState = ZFPlayerPlayStatePlayStopped;
         if (self.playerDidToEnd) self.playerDidToEnd(self);

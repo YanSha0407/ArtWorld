@@ -51,10 +51,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        @weakify(self)
+        weakify(self)
         [[ZFReachabilityManager sharedManager] startMonitoring];
         [[ZFReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(ZFReachabilityStatus status) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(videoPlayer:reachabilityChanged:)]) {
                 [self.controlView videoPlayer:self reachabilityChanged:status];
             }
@@ -122,9 +122,9 @@
 }
 
 - (void)playerManagerCallbcak {
-    @weakify(self)
+    weakify(self)
     self.currentPlayerManager.playerPrepareToPlay = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSURL * _Nonnull assetURL) {
-        @strongify(self)
+        strongify(self)
         self.currentPlayerManager.view.hidden = NO;
         [self.notification addNotification];
         [self addDeviceOrientationObserver];
@@ -139,7 +139,7 @@
     };
     
     self.currentPlayerManager.playerReadyToPlay = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSURL * _Nonnull assetURL) {
-        @strongify(self)
+        strongify(self)
         if (self.playerReadyToPlay) self.playerReadyToPlay(asset,assetURL);
         if (!self.customAudioSession) {
             // Apps using this category don't mute when the phone's mute button is turned on, but play sound when the phone is silent
@@ -149,7 +149,7 @@
     };
     
     self.currentPlayerManager.playerPlayTimeChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSTimeInterval currentTime, NSTimeInterval duration) {
-        @strongify(self)
+        strongify(self)
         if (self.playerPlayTimeChanged) self.playerPlayTimeChanged(asset,currentTime,duration);
         if ([self.controlView respondsToSelector:@selector(videoPlayer:currentTime:totalTime:)]) {
             [self.controlView videoPlayer:self currentTime:currentTime totalTime:duration];
@@ -157,7 +157,7 @@
     };
     
     self.currentPlayerManager.playerBufferTimeChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSTimeInterval bufferTime) {
-        @strongify(self)
+        strongify(self)
         if ([self.controlView respondsToSelector:@selector(videoPlayer:bufferTime:)]) {
             [self.controlView videoPlayer:self bufferTime:bufferTime];
         }
@@ -165,7 +165,7 @@
     };
     
     self.currentPlayerManager.playerPlayStateChanged = ^(id  _Nonnull asset, ZFPlayerPlaybackState playState) {
-        @strongify(self)
+        strongify(self)
         if (self.playerPlayStateChanged) self.playerPlayStateChanged(asset, playState);
         if ([self.controlView respondsToSelector:@selector(videoPlayer:playStateChanged:)]) {
             [self.controlView videoPlayer:self playStateChanged:playState];
@@ -173,7 +173,7 @@
     };
     
     self.currentPlayerManager.playerLoadStateChanged = ^(id  _Nonnull asset, ZFPlayerLoadState loadState) {
-        @strongify(self)
+        strongify(self)
         if (self.playerLoadStateChanged) self.playerLoadStateChanged(asset, loadState);
         if ([self.controlView respondsToSelector:@selector(videoPlayer:loadStateChanged:)]) {
             [self.controlView videoPlayer:self loadStateChanged:loadState];
@@ -181,7 +181,7 @@
     };
     
     self.currentPlayerManager.playerDidToEnd = ^(id  _Nonnull asset) {
-        @strongify(self)
+        strongify(self)
         if (self.playerDidToEnd) self.playerDidToEnd(asset);
         if ([self.controlView respondsToSelector:@selector(videoPlayerPlayEnd:)]) {
             [self.controlView videoPlayerPlayEnd:self];
@@ -189,7 +189,7 @@
     };
     
     self.currentPlayerManager.playerPlayFailed = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, id  _Nonnull error) {
-        @strongify(self)
+        strongify(self)
         if (self.playerPlayFailed) self.playerPlayFailed(asset, error);
         if ([self.controlView respondsToSelector:@selector(videoPlayerPlayFailed:error:)]) {
             [self.controlView videoPlayerPlayFailed:self error:error];
@@ -197,7 +197,7 @@
     };
     
     self.currentPlayerManager.presentationSizeChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, CGSize size){
-        @strongify(self)
+        strongify(self)
         if (self.orientationObserver.fullScreenMode == ZFFullScreenModeAutomatic) {
             if (size.width > size.height) {
                 self.orientationObserver.fullScreenMode = ZFFullScreenModeLandscape;
@@ -235,9 +235,9 @@
 - (ZFPlayerNotification *)notification {
     if (!_notification) {
         _notification = [[ZFPlayerNotification alloc] init];
-        @weakify(self)
+        weakify(self)
         _notification.willResignActive = ^(ZFPlayerNotification * _Nonnull registrar) {
-            @strongify(self)
+            strongify(self)
             if (self.isViewControllerDisappear) return;
             if (self.pauseWhenAppResignActive && self.currentPlayerManager.isPlaying) {
                 self.pauseByEvent = YES;
@@ -250,13 +250,13 @@
             }
         };
         _notification.didBecomeActive = ^(ZFPlayerNotification * _Nonnull registrar) {
-            @strongify(self)
+            strongify(self)
             if (self.isViewControllerDisappear) return;
             if (self.isPauseByEvent) self.pauseByEvent = NO;
             if (self.isFullScreen && !self.isLockedScreen) self.orientationObserver.lockedScreen = NO;
         };
         _notification.oldDeviceUnavailable = ^(ZFPlayerNotification * _Nonnull registrar) {
-            @strongify(self)
+            strongify(self)
             if (self.currentPlayerManager.isPlaying) {
                 [self.currentPlayerManager play];
             }
@@ -724,12 +724,12 @@
 #pragma mark - getter
 
 - (ZFOrientationObserver *)orientationObserver {
-    @weakify(self)
+    weakify(self)
     ZFOrientationObserver *orientationObserver = objc_getAssociatedObject(self, _cmd);
     if (!orientationObserver) {
         orientationObserver = [[ZFOrientationObserver alloc] init];
         orientationObserver.orientationWillChange = ^(ZFOrientationObserver * _Nonnull observer, BOOL isFullScreen) {
-            @strongify(self)
+            strongify(self)
             if (self.orientationWillChange) self.orientationWillChange(self, isFullScreen);
             if ([self.controlView respondsToSelector:@selector(videoPlayer:orientationWillChange:)]) {
                 [self.controlView videoPlayer:self orientationWillChange:observer];
@@ -738,7 +738,7 @@
             [self.controlView layoutIfNeeded];
         };
         orientationObserver.orientationDidChanged = ^(ZFOrientationObserver * _Nonnull observer, BOOL isFullScreen) {
-            @strongify(self)
+            strongify(self)
             if (self.orientationDidChanged) self.orientationDidChanged(self, isFullScreen);
             if ([self.controlView respondsToSelector:@selector(videoPlayer:orientationDidChanged:)]) {
                 [self.controlView videoPlayer:self orientationDidChanged:observer];
@@ -843,9 +843,9 @@
     ZFPlayerGestureControl *gestureControl = objc_getAssociatedObject(self, _cmd);
     if (!gestureControl) {
         gestureControl = [[ZFPlayerGestureControl alloc] init];
-        @weakify(self)
+        weakify(self)
         gestureControl.triggerCondition = ^BOOL(ZFPlayerGestureControl * _Nonnull control, ZFPlayerGestureType type, UIGestureRecognizer * _Nonnull gesture, UITouch *touch) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(gestureTriggerCondition:gestureType:gestureRecognizer:touch:)]) {
                 return [self.controlView gestureTriggerCondition:control gestureType:type gestureRecognizer:gesture touch:touch];
             }
@@ -853,42 +853,42 @@
         };
         
         gestureControl.singleTapped = ^(ZFPlayerGestureControl * _Nonnull control) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(gestureSingleTapped:)]) {
                 [self.controlView gestureSingleTapped:control];
             }
         };
         
         gestureControl.doubleTapped = ^(ZFPlayerGestureControl * _Nonnull control) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(gestureDoubleTapped:)]) {
                 [self.controlView gestureDoubleTapped:control];
             }
         };
         
         gestureControl.beganPan = ^(ZFPlayerGestureControl * _Nonnull control, ZFPanDirection direction, ZFPanLocation location) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(gestureBeganPan:panDirection:panLocation:)]) {
                 [self.controlView gestureBeganPan:control panDirection:direction panLocation:location];
             }
         };
         
         gestureControl.changedPan = ^(ZFPlayerGestureControl * _Nonnull control, ZFPanDirection direction, ZFPanLocation location, CGPoint velocity) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(gestureChangedPan:panDirection:panLocation:withVelocity:)]) {
                 [self.controlView gestureChangedPan:control panDirection:direction panLocation:location withVelocity:velocity];
             }
         };
         
         gestureControl.endedPan = ^(ZFPlayerGestureControl * _Nonnull control, ZFPanDirection direction, ZFPanLocation location) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(gestureEndedPan:panDirection:panLocation:)]) {
                 [self.controlView gestureEndedPan:control panDirection:direction panLocation:location];
             }
         };
         
         gestureControl.pinched = ^(ZFPlayerGestureControl * _Nonnull control, float scale) {
-            @strongify(self)
+            strongify(self)
             if ([self.controlView respondsToSelector:@selector(gesturePinched:scale:)]) {
                 [self.controlView gesturePinched:control scale:scale];
             }
@@ -954,9 +954,9 @@
 - (void)setScrollView:(UIScrollView *)scrollView {
     objc_setAssociatedObject(self, @selector(scrollView), scrollView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.scrollView.zf_WWANAutoPlay = self.isWWANAutoPlay;
-    @weakify(self)
+    weakify(self)
     scrollView.zf_playerWillAppearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
-        @strongify(self)
+        strongify(self)
         if (self.isFullScreen) return;
         if (self.zf_playerWillAppearInScrollView) self.zf_playerWillAppearInScrollView(indexPath);
         if ([self.controlView respondsToSelector:@selector(playerDidAppearInScrollView:)]) {
@@ -965,7 +965,7 @@
     };
     
     scrollView.zf_playerDidAppearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
-        @strongify(self)
+        strongify(self)
         if (self.isFullScreen) return;
         if (self.zf_playerDidAppearInScrollView) self.zf_playerDidAppearInScrollView(indexPath);
         if ([self.controlView respondsToSelector:@selector(playerDidAppearInScrollView:)]) {
@@ -974,7 +974,7 @@
     };
     
     scrollView.zf_playerWillDisappearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
-        @strongify(self)
+        strongify(self)
         if (self.isFullScreen) return;
         if (self.zf_playerWillDisappearInScrollView) self.zf_playerWillDisappearInScrollView(indexPath);
         if ([self.controlView respondsToSelector:@selector(playerWillDisappearInScrollView:)]) {
@@ -983,7 +983,7 @@
     };
     
     scrollView.zf_playerDidDisappearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
-        @strongify(self)
+        strongify(self)
         if (self.isFullScreen) return;
         if (self.zf_playerDidDisappearInScrollView) self.zf_playerDidDisappearInScrollView(indexPath);
         if ([self.controlView respondsToSelector:@selector(playerDidDisappearInScrollView:)]) {
@@ -992,7 +992,7 @@
     };
     
     scrollView.zf_playerAppearingInScrollView = ^(NSIndexPath * _Nonnull indexPath, CGFloat playerApperaPercent) {
-        @strongify(self)
+        strongify(self)
         if (self.isFullScreen) return;
         if (self.zf_playerAppearingInScrollView) self.zf_playerAppearingInScrollView(indexPath, playerApperaPercent);
         if ([self.controlView respondsToSelector:@selector(playerAppearingInScrollView:playerApperaPercent:)]) {
@@ -1008,7 +1008,7 @@
     };
     
     scrollView.zf_playerDisappearingInScrollView = ^(NSIndexPath * _Nonnull indexPath, CGFloat playerDisapperaPercent) {
-        @strongify(self)
+        strongify(self)
         if (self.isFullScreen) return;
         if (self.zf_playerDisappearingInScrollView) self.zf_playerDisappearingInScrollView(indexPath, playerDisapperaPercent);
         if ([self.controlView respondsToSelector:@selector(playerDisappearingInScrollView:playerDisapperaPercent:)]) {
@@ -1205,9 +1205,9 @@
         self.currentPlayIndex = indexPath.row;
     }
     if (scrollToTop) {
-        @weakify(self)
+        weakify(self)
         [self.scrollView zf_scrollToRowAtIndexPath:indexPath completionHandler:^{
-            @strongify(self)
+            strongify(self)
             if (completionHandler) completionHandler();
             self.playingIndexPath = indexPath;
             self.assetURL = assetURL;
@@ -1222,9 +1222,9 @@
 - (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop {
     if ([indexPath compare:self.playingIndexPath] == NSOrderedSame) return;
     if (scrollToTop) {
-        @weakify(self)
+        weakify(self)
         [self.scrollView zf_scrollToRowAtIndexPath:indexPath completionHandler:^{
-            @strongify(self)
+            strongify(self)
             [self playTheIndexPath:indexPath];
         }];
     } else {

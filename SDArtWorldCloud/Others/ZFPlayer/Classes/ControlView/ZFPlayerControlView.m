@@ -187,9 +187,9 @@
 - (void)autoFadeOutControlView {
     self.controlViewAppeared = YES;
     [self cancelAutoFadeOutControlView];
-    @weakify(self)
+    weakify(self)
     self.afterBlock = dispatch_block_create(0, ^{
-        @strongify(self)
+        strongify(self)
         [self hideControlViewWithAnimated:YES];
     });
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.autoHiddenTimeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(),self.afterBlock);
@@ -399,10 +399,10 @@
 
 /// 滑动结束手势事件
 - (void)gestureEndedPan:(ZFPlayerGestureControl *)gestureControl panDirection:(ZFPanDirection)direction panLocation:(ZFPanLocation)location {
-    @weakify(self)
+    weakify(self)
     if (direction == ZFPanDirectionH && self.sumTime >= 0 && self.player.totalTime > 0) {
         [self.player seekToTime:self.sumTime completionHandler:^(BOOL finished) {
-            @strongify(self)
+            strongify(self)
             /// 左右滑动调节播放进度
             [self.portraitControlView sliderChangeEnded];
             [self.landScapeControlView sliderChangeEnded];
@@ -665,14 +665,14 @@
 
 - (ZFPortraitControlView *)portraitControlView {
     if (!_portraitControlView) {
-        @weakify(self)
+        weakify(self)
         _portraitControlView = [[ZFPortraitControlView alloc] init];
         _portraitControlView.sliderValueChanging = ^(CGFloat value, BOOL forward) {
-            @strongify(self)
+            strongify(self)
             [self cancelAutoFadeOutControlView];
         };
         _portraitControlView.sliderValueChanged = ^(CGFloat value) {
-            @strongify(self)
+            strongify(self)
             [self autoFadeOutControlView];
         };
     }
@@ -681,14 +681,14 @@
 
 - (ZFLandScapeControlView *)landScapeControlView {
     if (!_landScapeControlView) {
-        @weakify(self)
+        weakify(self)
         _landScapeControlView = [[ZFLandScapeControlView alloc] init];
         _landScapeControlView.sliderValueChanging = ^(CGFloat value, BOOL forward) {
-            @strongify(self)
+            strongify(self)
             [self cancelAutoFadeOutControlView];
         };
         _landScapeControlView.sliderValueChanged = ^(CGFloat value) {
-            @strongify(self)
+            strongify(self)
             [self autoFadeOutControlView];
         };
     }
@@ -779,9 +779,9 @@
 - (ZFSmallFloatControlView *)floatControlView {
     if (!_floatControlView) {
         _floatControlView = [[ZFSmallFloatControlView alloc] init];
-        @weakify(self)
+        weakify(self)
         _floatControlView.closeClickCallback = ^{
-            @strongify(self)
+            strongify(self)
             if (self.player.containerType == ZFPlayerContainerTypeCell) {
                 [self.player stopCurrentPlayingCell];
             } else if (self.player.containerType == ZFPlayerContainerTypeView) {

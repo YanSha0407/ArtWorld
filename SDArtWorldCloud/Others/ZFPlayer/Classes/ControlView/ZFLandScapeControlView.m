@@ -184,9 +184,9 @@
 
 - (void)sliderTouchEnded:(float)value {
     if (self.player.totalTime > 0) {
-        @weakify(self)
+        weakify(self)
         [self.player seekToTime:self.player.totalTime*value completionHandler:^(BOOL finished) {
-            @strongify(self)
+            strongify(self)
             if (finished) {
                 self.slider.isdragging = NO;
             }
@@ -214,9 +214,9 @@
 - (void)sliderTapped:(float)value {
     if (self.player.totalTime > 0) {
         self.slider.isdragging = YES;
-        @weakify(self)
+        weakify(self)
         [self.player seekToTime:self.player.totalTime*value completionHandler:^(BOOL finished) {
-            @strongify(self)
+            strongify(self)
             if (finished) {
                 self.slider.isdragging = NO;
                 [self.player.currentPlayerManager play];

@@ -30,7 +30,28 @@
 		E51743962385660300A7F050 /* VACategoryLeftTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E517438F2385660200A7F050 /* VACategoryLeftTableCell.m */; };
 		E51743972385660300A7F050 /* VACategoryLeftTabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51743902385660200A7F050 /* VACategoryLeftTabelView.m */; };
 		E517439D238567CC00A7F050 /* VACategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = E517439C238567CC00A7F050 /* VACategoryController.m */; };
+		E5972000238E4F8E005E0CEB /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = E5971FFE238E4F8E005E0CEB /* UIColor+ColorChange.m */; };
+		E5972004238E502A005E0CEB /* YSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972002238E502A005E0CEB /* YSFileManager.m */; };
+		E5972007238E583B005E0CEB /* VAMakePlanController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972006238E583B005E0CEB /* VAMakePlanController.m */; };
+		E597200A238E59E0005E0CEB /* VAMakePlanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972009238E59E0005E0CEB /* VAMakePlanView.m */; };
+		E597200D238E5A1A005E0CEB /* VASubjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E597200C238E5A1A005E0CEB /* VASubjectModel.m */; };
+		E5972010238E5E0B005E0CEB /* VAFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E597200F238E5E0B005E0CEB /* VAFormModel.m */; };
+		E5972013238E5E51005E0CEB /* VAFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972012238E5E51005E0CEB /* VAFilterModel.m */; };
+		E5972016238E7318005E0CEB /* VAMakePlanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972015238E7318005E0CEB /* VAMakePlanModel.m */; };
+		E5972019238E7492005E0CEB /* VACourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972018238E7492005E0CEB /* VACourseDetailController.m */; };
+		E5B35831238CF8740019FD1E /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B3582D238CF8740019FD1E /* PPNetworkHelper.m */; };
+		E5B35832238CF8740019FD1E /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B35830238CF8740019FD1E /* PPNetworkCache.m */; };
+		E5B35835238D22690019FD1E /* VACalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B35834238D22690019FD1E /* VACalendarModel.m */; };
+		E5B35838238D22ED0019FD1E /* VACalendarCourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B35837238D22ED0019FD1E /* VACalendarCourseModel.m */; };
+		E5B3583B238D23250019FD1E /* VACategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B3583A238D23250019FD1E /* VACategoryModel.m */; };
+		E5B3583E238D23CD0019FD1E /* VAClassTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B3583D238D23CD0019FD1E /* VAClassTimeModel.m */; };
 		E5B6CF3B23879E4900A9B6B4 /* VATeacherPlanController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6CF3A23879E4900A9B6B4 /* VATeacherPlanController.m */; };
+		E5B6CF3E2387B0C300A9B6B4 /* VAPlanController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6CF3D2387B0C300A9B6B4 /* VAPlanController.m */; };
+		E5B6CF412387BE1800A9B6B4 /* VAPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6CF402387BE1800A9B6B4 /* VAPlanCell.m */; };
+		E5B6CF602387D24900A9B6B4 /* VAClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6CF5F2387D24900A9B6B4 /* VAClassController.m */; };
+		E5B6CF922387E7D600A9B6B4 /* VAAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6CF902387E7D500A9B6B4 /* VAAccountManager.m */; };
+		E5B6CF932387E7D600A9B6B4 /* VAUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6CF912387E7D600A9B6B4 /* VAUserModel.m */; };
+		E5B6CF962387EBAA00A9B6B4 /* VAClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6CF952387EBAA00A9B6B4 /* VAClassModel.m */; };
 		E5BCB2212382896200EAF717 /* ZFPlayerGestureControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BCB1E72382896200EAF717 /* ZFPlayerGestureControl.m */; };
 		E5BCB2222382896200EAF717 /* ZFPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BCB1E82382896200EAF717 /* ZFPlayerController.m */; };
 		E5BCB2232382896200EAF717 /* ZFOrientationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BCB1EB2382896200EAF717 /* ZFOrientationObserver.m */; };
@@ -64,7 +85,6 @@
 		E5F7194C2382763D007DE9C1 /* LQCityPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F718CC2382763C007DE9C1 /* LQCityPicker.m */; };
 		E5F7194D2382763D007DE9C1 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F718CE2382763C007DE9C1 /* Address.plist */; };
 		E5F719542382763D007DE9C1 /* VASystemDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F718E12382763D007DE9C1 /* VASystemDeviceInfo.m */; };
-		E5F719552382763D007DE9C1 /* SystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F718E32382763D007DE9C1 /* SystemInfo.m */; };
 		E5F719562382763D007DE9C1 /* ZFPlayerGestureControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F718E92382763D007DE9C1 /* ZFPlayerGestureControl.m */; };
 		E5F719572382763D007DE9C1 /* ZFPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F718EA2382763D007DE9C1 /* ZFPlayerController.m */; };
 		E5F719582382763D007DE9C1 /* ZFOrientationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F718ED2382763D007DE9C1 /* ZFOrientationObserver.m */; };
@@ -127,7 +147,7 @@
 		400072171A39A4B4B407D1CB /* Pods-SDArtWorldCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDArtWorldCloud.release.xcconfig"; path = "Target Support Files/Pods-SDArtWorldCloud/Pods-SDArtWorldCloud.release.xcconfig"; sourceTree = "<group>"; };
 		501C2C4AB7808B461432EE4B /* Pods-SDArtWorldCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDArtWorldCloud.debug.xcconfig"; path = "Target Support Files/Pods-SDArtWorldCloud/Pods-SDArtWorldCloud.debug.xcconfig"; sourceTree = "<group>"; };
 		AA31861388981E3BE6EBAD09 /* libPods-SDArtWorldCloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDArtWorldCloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E50D0CEA2382638700736223 /* SDArtWorldCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDArtWorldCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E50D0CEA2382638700736223 /* 美术世界.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美术世界.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50D0CF92382638900736223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E50D0CFE2382638900736223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E50D0CFF2382638900736223 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -173,8 +193,52 @@
 		E51743932385660300A7F050 /* VACategoryLeftTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VACategoryLeftTableCell.h; sourceTree = "<group>"; };
 		E517439B238567CC00A7F050 /* VACategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VACategoryController.h; sourceTree = "<group>"; };
 		E517439C238567CC00A7F050 /* VACategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VACategoryController.m; sourceTree = "<group>"; };
+		E5971FFE238E4F8E005E0CEB /* UIColor+ColorChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorChange.m"; sourceTree = "<group>"; };
+		E5971FFF238E4F8E005E0CEB /* UIColor+ColorChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorChange.h"; sourceTree = "<group>"; };
+		E5972002238E502A005E0CEB /* YSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFileManager.m; sourceTree = "<group>"; };
+		E5972003238E502A005E0CEB /* YSFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFileManager.h; sourceTree = "<group>"; };
+		E5972005238E583B005E0CEB /* VAMakePlanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAMakePlanController.h; sourceTree = "<group>"; };
+		E5972006238E583B005E0CEB /* VAMakePlanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAMakePlanController.m; sourceTree = "<group>"; };
+		E5972008238E59E0005E0CEB /* VAMakePlanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAMakePlanView.h; sourceTree = "<group>"; };
+		E5972009238E59E0005E0CEB /* VAMakePlanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAMakePlanView.m; sourceTree = "<group>"; };
+		E597200B238E5A1A005E0CEB /* VASubjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VASubjectModel.h; sourceTree = "<group>"; };
+		E597200C238E5A1A005E0CEB /* VASubjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VASubjectModel.m; sourceTree = "<group>"; };
+		E597200E238E5E0B005E0CEB /* VAFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAFormModel.h; sourceTree = "<group>"; };
+		E597200F238E5E0B005E0CEB /* VAFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAFormModel.m; sourceTree = "<group>"; };
+		E5972011238E5E51005E0CEB /* VAFilterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAFilterModel.h; sourceTree = "<group>"; };
+		E5972012238E5E51005E0CEB /* VAFilterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAFilterModel.m; sourceTree = "<group>"; };
+		E5972014238E7318005E0CEB /* VAMakePlanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAMakePlanModel.h; sourceTree = "<group>"; };
+		E5972015238E7318005E0CEB /* VAMakePlanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAMakePlanModel.m; sourceTree = "<group>"; };
+		E5972017238E7492005E0CEB /* VACourseDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VACourseDetailController.h; sourceTree = "<group>"; };
+		E5972018238E7492005E0CEB /* VACourseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VACourseDetailController.m; sourceTree = "<group>"; };
+		E5B3582D238CF8740019FD1E /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
+		E5B3582E238CF8740019FD1E /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
+		E5B3582F238CF8740019FD1E /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
+		E5B35830238CF8740019FD1E /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
+		E5B35833238D22690019FD1E /* VACalendarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VACalendarModel.h; sourceTree = "<group>"; };
+		E5B35834238D22690019FD1E /* VACalendarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VACalendarModel.m; sourceTree = "<group>"; };
+		E5B35836238D22ED0019FD1E /* VACalendarCourseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VACalendarCourseModel.h; sourceTree = "<group>"; };
+		E5B35837238D22ED0019FD1E /* VACalendarCourseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VACalendarCourseModel.m; sourceTree = "<group>"; };
+		E5B35839238D23250019FD1E /* VACategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VACategoryModel.h; sourceTree = "<group>"; };
+		E5B3583A238D23250019FD1E /* VACategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VACategoryModel.m; sourceTree = "<group>"; };
+		E5B3583C238D23CD0019FD1E /* VAClassTimeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAClassTimeModel.h; sourceTree = "<group>"; };
+		E5B3583D238D23CD0019FD1E /* VAClassTimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAClassTimeModel.m; sourceTree = "<group>"; };
 		E5B6CF3923879E4900A9B6B4 /* VATeacherPlanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VATeacherPlanController.h; sourceTree = "<group>"; };
 		E5B6CF3A23879E4900A9B6B4 /* VATeacherPlanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VATeacherPlanController.m; sourceTree = "<group>"; };
+		E5B6CF3C2387B0C300A9B6B4 /* VAPlanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAPlanController.h; sourceTree = "<group>"; };
+		E5B6CF3D2387B0C300A9B6B4 /* VAPlanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAPlanController.m; sourceTree = "<group>"; };
+		E5B6CF3F2387BE1800A9B6B4 /* VAPlanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAPlanCell.h; sourceTree = "<group>"; };
+		E5B6CF402387BE1800A9B6B4 /* VAPlanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAPlanCell.m; sourceTree = "<group>"; };
+		E5B6CF5D2387D13C00A9B6B4 /* VAURLFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAURLFile.h; sourceTree = "<group>"; };
+		E5B6CF5E2387D24900A9B6B4 /* VAClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAClassController.h; sourceTree = "<group>"; };
+		E5B6CF5F2387D24900A9B6B4 /* VAClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAClassController.m; sourceTree = "<group>"; };
+		E5B6CF8E2387E7D500A9B6B4 /* VAUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAUserModel.h; sourceTree = "<group>"; };
+		E5B6CF8F2387E7D500A9B6B4 /* VAAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAAccountManager.h; sourceTree = "<group>"; };
+		E5B6CF902387E7D500A9B6B4 /* VAAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAAccountManager.m; sourceTree = "<group>"; };
+		E5B6CF912387E7D600A9B6B4 /* VAUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAUserModel.m; sourceTree = "<group>"; };
+		E5B6CF942387EBAA00A9B6B4 /* VAClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAClassModel.h; sourceTree = "<group>"; };
+		E5B6CF952387EBAA00A9B6B4 /* VAClassModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAClassModel.m; sourceTree = "<group>"; };
+		E5B6CF972387ECC600A9B6B4 /* VAMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAMessage.h; sourceTree = "<group>"; };
 		E5BCB1E62382896200EAF717 /* ZFPlayerNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerNotification.h; sourceTree = "<group>"; };
 		E5BCB1E72382896200EAF717 /* ZFPlayerGestureControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerGestureControl.m; sourceTree = "<group>"; };
 		E5BCB1E82382896200EAF717 /* ZFPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerController.m; sourceTree = "<group>"; };
@@ -239,8 +303,6 @@
 		E5F718CE2382763C007DE9C1 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
 		E5F718CF2382763C007DE9C1 /* LQCityPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCityPicker.h; sourceTree = "<group>"; };
 		E5F718E12382763D007DE9C1 /* VASystemDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VASystemDeviceInfo.m; sourceTree = "<group>"; };
-		E5F718E22382763D007DE9C1 /* SystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfo.h; sourceTree = "<group>"; };
-		E5F718E32382763D007DE9C1 /* SystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfo.m; sourceTree = "<group>"; };
 		E5F718E42382763D007DE9C1 /* VASystemDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VASystemDeviceInfo.h; sourceTree = "<group>"; };
 		E5F718E82382763D007DE9C1 /* ZFPlayerNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerNotification.h; sourceTree = "<group>"; };
 		E5F718E92382763D007DE9C1 /* ZFPlayerGestureControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerGestureControl.m; sourceTree = "<group>"; };
@@ -373,7 +435,7 @@
 		E50D0CEB2382638700736223 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E50D0CEA2382638700736223 /* SDArtWorldCloud.app */,
+				E50D0CEA2382638700736223 /* 美术世界.app */,
 				E50D0D052382638900736223 /* SDArtWorldCloudTests.xctest */,
 				E50D0D102382638900736223 /* SDArtWorldCloudUITests.xctest */,
 			);
@@ -543,6 +605,44 @@
 			path = "分表联动";
 			sourceTree = "<group>";
 		};
+		E5971FFC238E4F78005E0CEB /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				E5971FFF238E4F8E005E0CEB /* UIColor+ColorChange.h */,
+				E5971FFE238E4F8E005E0CEB /* UIColor+ColorChange.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		E5971FFD238E4F80005E0CEB /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				E5BCB25A2382992E00EAF717 /* UIButton+Extension.h */,
+				E5BCB25B2382992E00EAF717 /* UIButton+Extension.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		E5972001238E502A005E0CEB /* YSFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				E5972002238E502A005E0CEB /* YSFileManager.m */,
+				E5972003238E502A005E0CEB /* YSFileManager.h */,
+			);
+			path = YSFileManager;
+			sourceTree = "<group>";
+		};
+		E5B3582C238CF8740019FD1E /* PPNetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E5B3582F238CF8740019FD1E /* PPNetworkHelper.h */,
+				E5B3582D238CF8740019FD1E /* PPNetworkHelper.m */,
+				E5B3582E238CF8740019FD1E /* PPNetworkCache.h */,
+				E5B35830238CF8740019FD1E /* PPNetworkCache.m */,
+			);
+			path = PPNetworkHelper;
+			sourceTree = "<group>";
+		};
 		E5B6CF3523879DF600A9B6B4 /* TeacherPlan */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +656,10 @@
 		E5B6CF3623879E0000A9B6B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5972008238E59E0005E0CEB /* VAMakePlanView.h */,
+				E5972009238E59E0005E0CEB /* VAMakePlanView.m */,
+				E5B6CF3F2387BE1800A9B6B4 /* VAPlanCell.h */,
+				E5B6CF402387BE1800A9B6B4 /* VAPlanCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -563,6 +667,24 @@
 		E5B6CF3723879E0700A9B6B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E597200B238E5A1A005E0CEB /* VASubjectModel.h */,
+				E597200C238E5A1A005E0CEB /* VASubjectModel.m */,
+				E5B35836238D22ED0019FD1E /* VACalendarCourseModel.h */,
+				E5B35837238D22ED0019FD1E /* VACalendarCourseModel.m */,
+				E5B6CF942387EBAA00A9B6B4 /* VAClassModel.h */,
+				E5B6CF952387EBAA00A9B6B4 /* VAClassModel.m */,
+				E5B35833238D22690019FD1E /* VACalendarModel.h */,
+				E5B35834238D22690019FD1E /* VACalendarModel.m */,
+				E5B35839238D23250019FD1E /* VACategoryModel.h */,
+				E5B3583A238D23250019FD1E /* VACategoryModel.m */,
+				E5B3583C238D23CD0019FD1E /* VAClassTimeModel.h */,
+				E5B3583D238D23CD0019FD1E /* VAClassTimeModel.m */,
+				E597200E238E5E0B005E0CEB /* VAFormModel.h */,
+				E597200F238E5E0B005E0CEB /* VAFormModel.m */,
+				E5972011238E5E51005E0CEB /* VAFilterModel.h */,
+				E5972012238E5E51005E0CEB /* VAFilterModel.m */,
+				E5972014238E7318005E0CEB /* VAMakePlanModel.h */,
+				E5972015238E7318005E0CEB /* VAMakePlanModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -572,8 +694,27 @@
 			children = (
 				E5B6CF3923879E4900A9B6B4 /* VATeacherPlanController.h */,
 				E5B6CF3A23879E4900A9B6B4 /* VATeacherPlanController.m */,
+				E5B6CF3C2387B0C300A9B6B4 /* VAPlanController.h */,
+				E5B6CF3D2387B0C300A9B6B4 /* VAPlanController.m */,
+				E5B6CF5E2387D24900A9B6B4 /* VAClassController.h */,
+				E5B6CF5F2387D24900A9B6B4 /* VAClassController.m */,
+				E5972005238E583B005E0CEB /* VAMakePlanController.h */,
+				E5972006238E583B005E0CEB /* VAMakePlanController.m */,
+				E5972017238E7492005E0CEB /* VACourseDetailController.h */,
+				E5972018238E7492005E0CEB /* VACourseDetailController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E5B6CF8D2387E7BD00A9B6B4 /* UserAccount */ = {
+			isa = PBXGroup;
+			children = (
+				E5B6CF8F2387E7D500A9B6B4 /* VAAccountManager.h */,
+				E5B6CF902387E7D500A9B6B4 /* VAAccountManager.m */,
+				E5B6CF8E2387E7D500A9B6B4 /* VAUserModel.h */,
+				E5B6CF912387E7D600A9B6B4 /* VAUserModel.m */,
+			);
+			path = UserAccount;
 			sourceTree = "<group>";
 		};
 		E5BCB1E32382896200EAF717 /* ZFPlayer */ = {
@@ -689,8 +830,9 @@
 		E5BCB258238298C400EAF717 /* Extensiones */ = {
 			isa = PBXGroup;
 			children = (
-				E5BCB25A2382992E00EAF717 /* UIButton+Extension.h */,
-				E5BCB25B2382992E00EAF717 /* UIButton+Extension.m */,
+				E5972001238E502A005E0CEB /* YSFileManager */,
+				E5971FFD238E4F80005E0CEB /* UIButton */,
+				E5971FFC238E4F78005E0CEB /* UIColor */,
 			);
 			path = Extensiones;
 			sourceTree = "<group>";
@@ -698,6 +840,7 @@
 		E5F718C92382763C007DE9C1 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				E5B6CF8D2387E7BD00A9B6B4 /* UserAccount */,
 				E517438B238565E300A7F050 /* 分表联动 */,
 				E5BCB258238298C400EAF717 /* Extensiones */,
 				E5BCB1E32382896200EAF717 /* ZFPlayer */,
@@ -732,10 +875,9 @@
 		E5F718E02382763D007DE9C1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E5B3582C238CF8740019FD1E /* PPNetworkHelper */,
 				E5F718E42382763D007DE9C1 /* VASystemDeviceInfo.h */,
 				E5F718E12382763D007DE9C1 /* VASystemDeviceInfo.m */,
-				E5F718E22382763D007DE9C1 /* SystemInfo.h */,
-				E5F718E32382763D007DE9C1 /* SystemInfo.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -943,6 +1085,8 @@
 				E5F719452382763D007DE9C1 /* VAPrefixHeader.pch */,
 				E5F719462382763D007DE9C1 /* VAKeyWordDefine.h */,
 				E5F719472382763D007DE9C1 /* VATextColorAndFont.h */,
+				E5B6CF5D2387D13C00A9B6B4 /* VAURLFile.h */,
+				E5B6CF972387ECC600A9B6B4 /* VAMessage.h */,
 			);
 			path = KeyWord;
 			sourceTree = "<group>";
@@ -983,7 +1127,7 @@
 			);
 			name = SDArtWorldCloud;
 			productName = SDArtWorldCloud;
-			productReference = E50D0CEA2382638700736223 /* SDArtWorldCloud.app */;
+			productReference = E50D0CEA2382638700736223 /* 美术世界.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E50D0D042382638900736223 /* SDArtWorldCloudTests */ = {
@@ -1144,12 +1288,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E50D0D5C2382648100736223 /* VAPlaceholderTextView.m in Sources */,
+				E5972007238E583B005E0CEB /* VAMakePlanController.m in Sources */,
 				E50D0D542382648100736223 /* VAUserFeedBackController.m in Sources */,
 				E5F7196C2382763D007DE9C1 /* ZFLoadingView.m in Sources */,
 				E50D0D5D2382648100736223 /* VALoginController.m in Sources */,
 				E5F719792382763D007DE9C1 /* TLUIUtility.m in Sources */,
 				E5F719692382763D007DE9C1 /* ZFSliderView.m in Sources */,
+				E5B6CF922387E7D600A9B6B4 /* VAAccountManager.m in Sources */,
 				E5F7195B2382763D007DE9C1 /* ZFPlayerNotification.m in Sources */,
+				E5972019238E7492005E0CEB /* VACourseDetailController.m in Sources */,
+				E5B6CF602387D24900A9B6B4 /* VAClassController.m in Sources */,
 				E5BCB25C2382992E00EAF717 /* UIButton+Extension.m in Sources */,
 				E5F7196A2382763D007DE9C1 /* ZFPlayerControlView.m in Sources */,
 				E5F719782382763D007DE9C1 /* UIAlertView+ActionBlocks.m in Sources */,
@@ -1159,6 +1307,9 @@
 				E50D0D572382648100736223 /* VAUserInfoCell.m in Sources */,
 				E5F7195E2382763D007DE9C1 /* ZFKVOController.m in Sources */,
 				E50D0D4F2382648100736223 /* VACourseDetailController.m in Sources */,
+				E5B3583E238D23CD0019FD1E /* VAClassTimeModel.m in Sources */,
+				E5972010238E5E0B005E0CEB /* VAFormModel.m in Sources */,
+				E5972004238E502A005E0CEB /* YSFileManager.m in Sources */,
 				E50D0D582382648100736223 /* VAPhotoCollectionViewCell.m in Sources */,
 				E5F719762382763D007DE9C1 /* VATabBarController.m in Sources */,
 				E50D0D562382648100736223 /* VAUserInfoModel.m in Sources */,
@@ -1168,8 +1319,11 @@
 				E5BCB2392382896200EAF717 /* ZFPortraitControlView.m in Sources */,
 				E50D0D512382648100736223 /* VACourseCell.m in Sources */,
 				E5BCB2342382896200EAF717 /* ZFSliderView.m in Sources */,
+				E5B35838238D22ED0019FD1E /* VACalendarCourseModel.m in Sources */,
+				E5B6CF412387BE1800A9B6B4 /* VAPlanCell.m in Sources */,
 				E50D0D552382648100736223 /* VAMyCenterController.m in Sources */,
 				E5F7195A2382763D007DE9C1 /* UIScrollView+ZFPlayer.m in Sources */,
+				E5B6CF932387E7D600A9B6B4 /* VAUserModel.m in Sources */,
 				E5BCB2232382896200EAF717 /* ZFOrientationObserver.m in Sources */,
 				E51743952385660300A7F050 /* VACategoryRightCollectionCell.m in Sources */,
 				E5F7195D2382763D007DE9C1 /* ZFPlayerView.m in Sources */,
@@ -1178,8 +1332,10 @@
 				E5F719562382763D007DE9C1 /* ZFPlayerGestureControl.m in Sources */,
 				E5F719542382763D007DE9C1 /* VASystemDeviceInfo.m in Sources */,
 				E5F7195C2382763D007DE9C1 /* ZFFloatView.m in Sources */,
+				E597200A238E59E0005E0CEB /* VAMakePlanView.m in Sources */,
 				E5F719652382763D007DE9C1 /* ZFVolumeBrightnessView.m in Sources */,
 				E51743962385660300A7F050 /* VACategoryLeftTableCell.m in Sources */,
+				E5B35832238CF8740019FD1E /* PPNetworkCache.m in Sources */,
 				E5BCB22C2382896200EAF717 /* ZFIJKPlayerManager.m in Sources */,
 				E5BCB23B2382896200EAF717 /* KSMediaPlayerManager.m in Sources */,
 				E5F719602382763D007DE9C1 /* UIViewController+ZFPlayerRotation.m in Sources */,
@@ -1192,10 +1348,11 @@
 				E5BCB22E2382896200EAF717 /* ZFUtilities.m in Sources */,
 				E5F719702382763D007DE9C1 /* KSMediaPlayerManager.m in Sources */,
 				E5BCB2352382896200EAF717 /* ZFPlayerControlView.m in Sources */,
-				E5F719552382763D007DE9C1 /* SystemInfo.m in Sources */,
 				E50D0D592382648100736223 /* VAFocusTableCell.m in Sources */,
+				E5B35835238D22690019FD1E /* VACalendarModel.m in Sources */,
 				E5F719632382763D007DE9C1 /* ZFUtilities.m in Sources */,
 				E5BCB22A2382896200EAF717 /* ZFReachabilityManager.m in Sources */,
+				E5972013238E5E51005E0CEB /* VAFilterModel.m in Sources */,
 				E50D0D5A2382648100736223 /* VAMyTableHeaderView.m in Sources */,
 				E50D0D002382638900736223 /* main.m in Sources */,
 				E5BCB2272382896200EAF717 /* ZFFloatView.m in Sources */,
@@ -1205,6 +1362,7 @@
 				E5F7196B2382763D007DE9C1 /* ZFSmallFloatControlView.m in Sources */,
 				E5F719672382763D007DE9C1 /* ZFNetworkSpeedMonitor.m in Sources */,
 				E5F7197B2382763D007DE9C1 /* YSImageScrollView.m in Sources */,
+				E5972000238E4F8E005E0CEB /* UIColor+ColorChange.m in Sources */,
 				E51743972385660300A7F050 /* VACategoryLeftTabelView.m in Sources */,
 				E5F719772382763D007DE9C1 /* UIWindow+Extensions.m in Sources */,
 				E5F719592382763D007DE9C1 /* ZFPlayerLogManager.m in Sources */,
@@ -1215,23 +1373,29 @@
 				E5F719752382763D007DE9C1 /* VABaseTabBar.m in Sources */,
 				E5BCB22B2382896200EAF717 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				E5F719642382763D007DE9C1 /* UIView+ZFFrame.m in Sources */,
+				E5B6CF962387EBAA00A9B6B4 /* VAClassModel.m in Sources */,
 				E5BCB2312382896200EAF717 /* ZFLandScapeControlView.m in Sources */,
 				E50D0D522382648100736223 /* VAFocusController.m in Sources */,
 				E5BCB2372382896200EAF717 /* ZFLoadingView.m in Sources */,
 				E5BCB2322382896200EAF717 /* ZFNetworkSpeedMonitor.m in Sources */,
 				E5BCB22F2382896200EAF717 /* UIView+ZFFrame.m in Sources */,
 				E5F719572382763D007DE9C1 /* ZFPlayerController.m in Sources */,
+				E597200D238E5A1A005E0CEB /* VASubjectModel.m in Sources */,
+				E5972016238E7318005E0CEB /* VAMakePlanModel.m in Sources */,
 				E5F7194C2382763D007DE9C1 /* LQCityPicker.m in Sources */,
 				E5BCB2362382896200EAF717 /* ZFSmallFloatControlView.m in Sources */,
 				E5F7196F2382763D007DE9C1 /* UIImageView+ZFCache.m in Sources */,
 				E5F7197A2382763D007DE9C1 /* LZCleanCaches.m in Sources */,
+				E5B35831238CF8740019FD1E /* PPNetworkHelper.m in Sources */,
 				E5BCB2242382896200EAF717 /* ZFPlayerLogManager.m in Sources */,
 				E50D0D532382648100736223 /* VAUserInfoController.m in Sources */,
 				E5F7197D2382763D007DE9C1 /* VABaseViewController.m in Sources */,
+				E5B3583B238D23250019FD1E /* VACategoryModel.m in Sources */,
 				E5BCB2222382896200EAF717 /* ZFPlayerController.m in Sources */,
 				E50D0D5B2382648100736223 /* VAPredicateMethod.m in Sources */,
 				E5F7197C2382763D007DE9C1 /* VANavViewController.m in Sources */,
 				E5F7196E2382763D007DE9C1 /* ZFPortraitControlView.m in Sources */,
+				E5B6CF3E2387B0C300A9B6B4 /* VAPlanController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1399,7 +1563,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sudo.SDArtWorldCloud;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "美术世界";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = (
 					"-Wno-implicit-retain-self",
@@ -1425,7 +1589,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sudo.SDArtWorldCloud;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "美术世界";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = (
 					"-Wno-implicit-retain-self",

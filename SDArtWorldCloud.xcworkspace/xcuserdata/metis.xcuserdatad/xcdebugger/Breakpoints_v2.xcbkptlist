@@ -7,7 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "87E3169F-E886-48D9-990D-F18341D34041"
+            uuid = "D68B4612-9A38-4B77-96C4-B5FF0B0B5A6C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -18,33 +18,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BC038952-DBCF-4E4F-A72D-C01D9E53683D"
+            uuid = "CC8DCDA5-7816-4365-8A1F-4639DB6DBC33"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDArtWorldCloud/Class/Course/Controller/VACourseController.m"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VATeacherPlanController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "-collectionView:viewForSupplementaryElementOfKind:atIndexPath:"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "723117E1-FDAA-4298-A631-4540C0CDA0EE"
+            uuid = "E8EBED57-4D64-4BFB-BCF5-94A7F286098D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VATeacherPlanController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-createRandomEvents"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "-getClassData"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15F59C4F-22B8-45B1-AF84-79358AB44ADD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDArtWorldCloud/Class/MyCenter/Controller/VAMyCenterController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B60F9BCE-870D-4F71-A74B-9EA19EA870C7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAMakePlanController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-clickNextBtn"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6061A410-CC4B-4AB4-BC33-18888A825203"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAMakePlanController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "-getClassFromData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74B3F0C2-6631-4761-9077-08E9E66A6AB3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAMakePlanController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-getClassFromData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "74B3F0C2-6631-4761-9077-08E9E66A6AB3 - ae608b01ed8b84ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[VAMakePlanController loadClassFormAndSubjectButton:]"
+                  moduleName = "&#x7f8e;&#x672f;&#x4e16;&#x754c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/metis/Desktop/NewArtWorld/ArtWorldCloud/SDArtWorldCloud/Class/TeacherPlan/Controller/VAMakePlanController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "193">
+               </Location>
+               <Location
+                  uuid = "74B3F0C2-6631-4761-9077-08E9E66A6AB3 - 13a6e682e69950a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__54-[VAMakePlanController loadClassFormAndSubjectButton:]_block_invoke"
+                  moduleName = "&#x7f8e;&#x672f;&#x4e16;&#x754c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/metis/Desktop/NewArtWorld/ArtWorldCloud/SDArtWorldCloud/Class/TeacherPlan/Controller/VAMakePlanController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "74B3F0C2-6631-4761-9077-08E9E66A6AB3 - 979e63ca738d6e10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_e8_32s40w"
+                  moduleName = "&#x7f8e;&#x672f;&#x4e16;&#x754c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/metis/Desktop/NewArtWorld/ArtWorldCloud/SDArtWorldCloud/Class/TeacherPlan/Controller/VAMakePlanController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

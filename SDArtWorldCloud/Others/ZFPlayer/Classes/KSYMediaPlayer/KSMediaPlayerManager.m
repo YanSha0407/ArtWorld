@@ -124,9 +124,9 @@
 }
 
 - (void)replay {
-    @weakify(self)
+    weakify(self)
     [self seekToTime:0 completionHandler:^(BOOL finished) {
-        @strongify(self)
+        strongify(self)
         [self play];
     }];
 }

@@ -157,6 +157,13 @@
     return [NSString stringWithFormat:@"%@", version];
 }
 
++ (NSString*)appName
+{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    return app_Name;
+}
+
 + (BOOL)is_iPhone_5
 {
     if ([UIScreen mainScreen].bounds.size.height == 568.0f) {

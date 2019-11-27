@@ -41,6 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
 /*软件版本*/
 + (NSString*)appVersion;
 
+/*软件名称*/
++ (NSString*)appName;
+
+
 /*是否是iPhone5*/
 + (BOOL)is_iPhone_5;
 

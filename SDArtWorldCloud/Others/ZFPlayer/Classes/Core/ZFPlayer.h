@@ -34,9 +34,9 @@ FOUNDATION_EXPORT const unsigned char ZFPlayerVersionString[];
  Synthsize a weak or strong reference.
  
  Example:
- @weakify(self)
+ weakify(self)
  [self doSomething^{
- @strongify(self)
+ strongify(self)
  if (!self) return;
  ...
  }];

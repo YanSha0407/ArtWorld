@@ -25,6 +25,11 @@
 // 副标题字体大小
 #define VASubTitleFont  UIFontMake(14)// 副标题字体大小
 
+// 主体字体加粗大小
+#define VAMainBlodTitleFont  [UIFont boldSystemFontOfSize:16]// 主体字体大小
+// 副标题字体加粗大小
+#define VASubBlodTitleFont  [UIFont boldSystemFontOfSize:14]// 副标题字体大小
+
 // 主体字体大小
 #define VAMainTitleFontSize  16// 主体字体大小
 // 副标题字体大小

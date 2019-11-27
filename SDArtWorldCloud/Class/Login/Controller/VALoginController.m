@@ -7,7 +7,7 @@
 //
 
 #import "VALoginController.h"
-
+#import "VATabBarController.h"
 @interface VALoginController ()<QMUITextFieldDelegate>
 @property (nonatomic,retain)UIView *loginBgView; // 登录背景
 @property (nonatomic,retain)QMUITextField *phoneNumTextFiled;// 手机号
@@ -31,7 +31,7 @@
     [self.loginBgView addSubview:self.changePwdBtn];
     [self.loginBgView addSubview:self.fogetPwdBtn];
     [self.loginBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).mas_offset(20);
+        make.top.mas_equalTo(self.view.mas_top).mas_offset(120);
         make.left.mas_equalTo(self.view).mas_offset(30);
         make.right.mas_equalTo(self.view).mas_offset(-30);
         make.height.mas_equalTo(KSystemHeight/2);
@@ -68,6 +68,26 @@
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(30);
     }];
+}
+
+#pragma mark -- 点击登录按钮
+-(void)clickLoginBtn{
+    NSDictionary *dic = @{@"phone_number":self.phoneNumTextFiled.text,@"phone_verify_code":self.codeTextFiled.text,@"landing":@"2",@"studio_name":[VASystemDeviceInfo appName],@"type":[NSNumber numberWithInteger:1]};
+    if (kIsNetwork) {
+        [PPNetworkHelper POST:KUserLogin parameters:dic success:^(id responseObject) {
+            NSDictionary *result = responseObject[@"data"];
+            VAUserModel *userInfoModel = [VAUserModel mj_objectWithKeyValues:result];
+            [VAAccountManager saveAccountWithAccount:userInfoModel];
+            VATabBarController *tabBar = [[VATabBarController alloc]init];
+            [UIApplication
+            sharedApplication].keyWindow.rootViewController = tabBar;
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+    else{
+        [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+    }
 }
 -(UIView *)loginBgView{
     if (!_loginBgView) {
@@ -119,6 +139,7 @@
         [_loginBtn setTitleColor:VAWhiteColor forState:UIControlStateNormal];
         [_loginBtn setBackgroundColor:VAMainAppColor];
         _loginBtn.titleLabel.font = VAMainTitleFont;
+        [_loginBtn addTarget:self action:@selector(clickLoginBtn) forControlEvents:UIControlEventTouchUpInside];
         KClipsCornerRadius(_loginBtn, 20);
     }
     return _loginBtn;

@@ -11,6 +11,7 @@
 #import "VACourseController.h"
 #import "VANavViewController.h"
 #import "VABaseTabBar.h"
+#import "VATeacherPlanController.h"
 #import "VACategoryController.h"
 @interface VATabBarController ()
 
@@ -31,15 +32,17 @@
 
 -(void)setupAllChildViewControllers
 {
-    NSArray *titles = @[@"课程",@"分类", @"我的"];
-    NSArray *iPhone_imageNames = @[@"ic_iPhone_topLine_unselected", @"ic_iPad_me_unselected", @"ic_iPad_me_unselected"];
-    NSArray *iPhone_Sel_imageNames = @[@"ic_iPhone_topLine_selected", @"ic_iPad_me_selected", @"ic_iPad_me_selected"];
+    NSArray *titles = @[@"课程",@"备课",@"分类", @"我的"];
+    NSArray *iPhone_imageNames = @[@"ic_iPhone_topLine_unselected", @"ic_iPad_me_unselected", @"ic_iPad_me_unselected", @"ic_iPad_me_unselected"];
+    NSArray *iPhone_Sel_imageNames = @[@"ic_iPhone_topLine_selected", @"ic_iPad_me_selected", @"ic_iPad_me_selected", @"ic_iPad_me_selected"];
     VACourseController *courseController = [[VACourseController alloc] init];
     [self setupChildViewController:courseController title:titles[0] imageName:iPhone_imageNames[0] selectedImageName:iPhone_Sel_imageNames[0]];
+    VATeacherPlanController *teacherPlanController = [[VATeacherPlanController alloc] init];
+    [self setupChildViewController:teacherPlanController title:titles[1] imageName:iPhone_imageNames[1] selectedImageName:iPhone_Sel_imageNames[1]];
     VACategoryController *categoryController = [[VACategoryController alloc] init];
-    [self setupChildViewController:categoryController title:titles[1] imageName:iPhone_imageNames[1] selectedImageName:iPhone_Sel_imageNames[1]];
+    [self setupChildViewController:categoryController title:titles[2] imageName:iPhone_imageNames[2] selectedImageName:iPhone_Sel_imageNames[2]];
     VAMyCenterController *myCenterController = [[VAMyCenterController alloc] init];
-    [self setupChildViewController:myCenterController title:titles[2] imageName:iPhone_imageNames[2] selectedImageName:iPhone_Sel_imageNames[2]];
+    [self setupChildViewController:myCenterController title:titles[3] imageName:iPhone_imageNames[3] selectedImageName:iPhone_Sel_imageNames[3]];
 }
 /**
  * 初始化子控制器
@@ -56,13 +59,13 @@
     UIImage *selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.selectedImage = selectedImage;
     
-    if ([title isEqualToString:@"我的"]) {
-        [self addChildViewController:vc];
-    }
-    else{
+//    if ([title isEqualToString:@"我的"]) {
+//        [self addChildViewController:vc];
+//    }
+//    else{
         // 包装一个导航控制器
         VANavViewController *nav = [[VANavViewController alloc] initWithRootViewController:vc];
         [self addChildViewController:nav];
-    }
+//    }
 }
 @end

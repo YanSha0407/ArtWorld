@@ -7,15 +7,34 @@
 //
 
 #import "VATeacherPlanController.h"
+#import "VAPlanCell.h"
+#import "VAClassController.h"
+#import "VAClassModel.h"
+#import "VACalendarModel.h"
+#import "VAMakePlanController.h"
+#define VAPlanCellIndentify @"VAPlanCell"
+#define UITableViewCellCount 5
+#define CalendarMenuViewHeight 44
+#define IPAD_CalendarContentViewHeight 300
+#define IPHONE_CalendarContentViewHeight 260
 
-@interface VATeacherPlanController (){
+@interface VATeacherPlanController ()<UITableViewDelegate,UITableViewDataSource>
+{
     NSMutableDictionary *_eventsByDate;
     NSDate *_todayDate;
     NSDate *_minDate;
     NSDate *_maxDate;
     NSDate *_dateSelected;
 }
-
+@property(nonatomic,strong)UITableView *planTableView;
+@property(nonatomic,strong)UIView *classNameView;
+@property(nonatomic,strong)UILabel *classLabel;
+@property(nonatomic,strong)Classes *classModel;
+@property(nonatomic,strong)NSString *startTime;
+@property(nonatomic,strong)NSString *endTime;
+@property(nonatomic,strong)NSMutableArray *planMutableArray;
+@property(nonatomic,strong)NSMutableArray *classMutableArray;
+@property(nonatomic,strong)VAClassModel *classMainModel;
 @end
 
 @implementation VATeacherPlanController
@@ -25,20 +44,52 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.calendarMenuView];
     [self.view addSubview:self.calendarContentView];
+    [self.view addSubview:self.planTableView];
+    [self.view layoutSubviews];
     self.calendarManager = [JTCalendarManager new];
-    self.calendarManager.delegate = self;
-    [self createRandomEvents];
+//    [self createRandomEvents];
     [self createMinAndMaxDate];
+    [self initCalendarManager];
+    self.startTime = [[self dateFormatter] stringFromDate:[NSDate date]];
+    self.endTime = self.startTime;
+    if ([[VAAccountManager getAccount].user_role isEqualToString:@"student"]) {
+        [self getClassData];
+    }
+    else{
+        Classes *class = [YSFileManager getCustomObjectWithKey:@"ClassModel"];
+        if (class) {
+          self.classModel = class;
+          [self selectedClassData];
+          [self getCoursePlanData];
+        }
+        else{
+            [self getClassData];
+        }
+    }
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.classNameView];
+    [VANotificationCenter addObserver:self.classLabel selector:@selector(getCoursePlanData) name:@"ChangeClassName" object:nil];
+}
+-(void )initCalendarManager{
+    self.calendarManager.delegate = self;
     [self.calendarManager setMenuView:self.calendarMenuView];
     [self.calendarManager setContentView:self.calendarContentView];
     [self.calendarManager setDate:_todayDate];
-    [self.view layoutSubviews];
 }
-
+-(UITableView *)planTableView{
+    if (!_planTableView) {
+        _planTableView = [[UITableView alloc]init];
+        _planTableView.delegate = self;
+        _planTableView.dataSource = self;
+        _planTableView.tableFooterView = [[UIView alloc]init];
+        _planTableView.showsVerticalScrollIndicator = NO;
+        _planTableView.showsVerticalScrollIndicator = NO;
+        [_planTableView registerClass:[VAPlanCell class] forCellReuseIdentifier:VAPlanCellIndentify];
+    }
+    return _planTableView;
+}
 -(JTCalendarMenuView *)calendarMenuView{
     if (!_calendarMenuView) {
         _calendarMenuView = [[JTCalendarMenuView alloc]init];
-        _calendarMenuView.backgroundColor = [UIColor redColor];
     }
     return _calendarMenuView;
 }
@@ -46,10 +97,172 @@
 -(JTHorizontalCalendarView *)calendarContentView{
     if (!_calendarContentView) {
         _calendarContentView = [[JTHorizontalCalendarView  alloc]init];
-        _calendarContentView.backgroundColor = [UIColor yellowColor];
     }
     return _calendarContentView;
 }
+-(NSMutableArray *)planMutableArray{
+    if (!_planMutableArray) {
+        _planMutableArray = [NSMutableArray array];
+    }
+    return _planMutableArray;
+}
+-(UIView *)classNameView{
+    if (!_classNameView) {
+        _classNameView = [[UIView alloc]init];
+        CGFloat classViewWidth = 0.0;
+        if (IS_IPAD) {
+          classViewWidth = 100;
+        }
+        else{
+           classViewWidth = 70;
+        }
+        UIView *classView = [[UIView alloc] initWithFrame:CGRectMake(15, 0, classViewWidth, 40)];
+        classView.backgroundColor = VAClearColor;
+        classView.userInteractionEnabled = YES;
+        self.classNameView = classView;
+        UILabel *classLable = [[UILabel alloc]initWithFrame:classView.bounds];
+        classLable.font = VASubTitleFont;
+        classLable.numberOfLines = 0;
+        classLable.textColor = VAWhiteColor;
+        classLable.userInteractionEnabled = YES;
+        [classView addSubview:classLable];
+        if ([[VAAccountManager getAccount].user_role isEqualToString:@"teacher"] && [VAAccountManager getAccount].code_number.length != 0) {
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickSelectedClass)];
+            [classLable addGestureRecognizer:tap];
+        }
+        _classLabel = classLable;
+        _classNameView = classView;
+    }
+    return _classNameView;
+}
+-(NSMutableArray *)classMutableArray{
+  if (!_classMutableArray) {
+    _classMutableArray = [NSMutableArray array];
+  }
+  return _classMutableArray;
+}
+
+#pragma mark - 给班级View赋值
+-(void)selectedClassData{
+    if (IS_IPAD) {
+      self.classLabel.text = self.classModel.name;
+    }
+    else{
+      if (self.classModel.name.length <= 5) {
+        self.classLabel.text = self.classModel.name;
+      }
+      else{
+        NSString *str1 = [self.classModel.name substringToIndex:self.classModel.name.length/2];
+        NSString *str2 = [self.classModel.name substringFromIndex:self.classModel.name.length/2];
+        self.classLabel.text = [NSString stringWithFormat:@"%@\n%@",str1,str2];
+      }
+    }
+}
+#pragma mark - 获取班级
+-(void)clickSelectedClass{
+    VAClassController *classVC = [[VAClassController alloc]init];
+    classVC.clickSureBtnBlock = ^(Classes * _Nonnull classModel) {
+        _classModel = classModel;
+        if (IS_IPAD) {
+          self.classLabel.text = self.classModel.name;
+        }
+        else{
+          if (self.classModel.name.length <= 5) {
+            self.classLabel.text = self.classModel.name;
+          }
+          else{
+            NSString *str1 = [self.classModel.name substringToIndex:self.classModel.name.length/2];
+            NSString *str2 = [self.classModel.name substringFromIndex:self.classModel.name.length/2];
+            self.classLabel.text = [NSString stringWithFormat:@"%@\n%@",str1,str2];
+          }
+        }
+    };
+    [self.navigationController pushViewController:classVC animated:YES];
+}
+#pragma mark - 获取课程表数据
+-(void)getCoursePlanData{
+    if (kIsNetwork) {
+        //  1、班级ID  2.开始时间 3.结束时间 4.日、周、月、年
+        NSDictionary *dic = @{@"class_id":[NSNumber numberWithInteger:self.classModel.class_id],@"started_at":self.startTime,@"ended_at":self.endTime,@"type":@"3"};
+        [PPNetworkHelper GET:KGetCoursePlanData parameters:dic success:^(id responseObject) {
+            NSArray *result = responseObject[@"data"];
+            if (result.count) {
+                VACalendarModel *allModel = [VACalendarModel mj_objectWithKeyValues:[result firstObject]];
+                [self.planMutableArray addObjectsFromArray:[VACalendarCourseModel mj_objectArrayWithKeyValuesArray:allModel.course]];
+                
+                [self.planTableView reloadData];
+            }
+            else{
+                [TLUIUtility showErrorHint:@"暂无课程"];
+            }
+            
+        } failure:^(NSError *error) {
+             
+        }];
+    }
+    else{
+        [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+    }
+}
+
+#pragma mark - 获取班级数据
+-(void)getClassData{
+    if ([VAAccountManager getAccount].studio_id) {
+        NSString *type = [[VAAccountManager getAccount].user_role isEqualToString:@"teacher"] ? @"1" : @"2";
+        NSDictionary *dic = @{@"admin_id":[VAAccountManager getAccount].admin_id,@"studio_id":[VAAccountManager getAccount].studio_id,@"type":type};
+        if (kIsNetwork) {
+            [PPNetworkHelper GET:kGetClassListData parameters:dic success:^(id responseObject) {
+                NSArray *result = responseObject[@"data"];
+                if (result) {
+                    NSArray *array = [VAClassModel mj_objectArrayWithKeyValuesArray:result];
+                    self.classMainModel = [array firstObject];
+                    [self.classMutableArray addObjectsFromArray:self.classMainModel.classes];
+                    [self selectedClassData];
+                    [self getCoursePlanData];
+                }
+                
+            } failure:^(NSError *error) {
+                
+            }];
+        }
+        else{
+            [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+        }
+    }
+}
+#pragma mark - UITableViewDelegate
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return UITableViewCellCount;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    VAPlanCell *cell =[tableView dequeueReusableCellWithIdentifier:VAPlanCellIndentify];
+    if (!cell) {
+        cell = [[VAPlanCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:VAPlanCellIndentify];
+    }
+    if (self.planMutableArray.count) {
+        cell.courseModel = self.planMutableArray[indexPath.row];
+    }
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return (KSystemHeight - self.calendarContentView.bottom - TabBarHeight - NavigationContentTop)/UITableViewCellCount;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row < self.planMutableArray.count) {
+        VACalendarCourseModel *courseModel = self.planMutableArray[indexPath.row];
+        if (courseModel.class_content.length != 0) { //有课  跳到对应的查看课程界面
+            
+        }
+        else{ // 无课
+             // 如果角色是老师且有激活码可以创建课件   其他无事件操作
+            if ([[VAAccountManager getAccount].user_role isEqualToString:@"teacher"] && [VAAccountManager getAccount].code_number.length != 0) {
+                [self showRadioSelectionDialogViewController];
+            }
+        }
+        
+    }
+}
+
 #pragma mark - CalendarManager delegate
 
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
@@ -92,6 +305,8 @@
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
 {
     _dateSelected = dayView.date;
+    self.startTime = [[self dateFormatter] stringFromDate:_dateSelected];
+    self.endTime = self.startTime;
     // Animation for the circleView
     dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
     [UIView transitionWithView:dayView
@@ -115,6 +330,7 @@
             [_calendarContentView loadPreviousPageWithAnimation];
         }
     }
+    [self getCoursePlanData];
 }
 
 #pragma mark - CalendarManager delegate - Page mangement
@@ -154,7 +370,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd-MM-yyyy";
+        dateFormatter.dateFormat = @"yyyy-MM-dd";
     }
     return dateFormatter;
 }
@@ -184,9 +400,51 @@
 }
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    self.calendarMenuView.frame = CGRectMake(0, 0, self.view.frame.size.width, 110);
-    self.calendarContentView.frame = CGRectMake(self.calendarMenuView.frame.origin.x, 80, self.view.frame.size.width, 300);
+    self.calendarMenuView.frame = CGRectMake(0, 0, KSystemWidth, CalendarMenuViewHeight);
+    CGFloat height = IS_IPAD ? IPAD_CalendarContentViewHeight : IPHONE_CalendarContentViewHeight;
+    self.calendarContentView.frame = CGRectMake(self.calendarMenuView.left, self.calendarMenuView.bottom, KSystemWidth, height);
+    self.planTableView.frame = CGRectMake(self.calendarMenuView.left, self.calendarContentView.bottom, KSystemWidth, KSystemHeight - self.calendarContentView.bottom - TabBarHeight);
 }
 
 
+#pragma mark ---选择创建课程方式
+- (void)showRadioSelectionDialogViewController{
+    QMUIOrderedDictionary *citys = [[QMUIOrderedDictionary alloc] initWithKeysAndObjects:
+                                    @"制作课件",@"制作课件",
+                                    @"选择本校课件",@"选择本校课件",
+                                    @"选择云课件",@"选择云课件",
+                                    nil];
+    QMUIDialogSelectionViewController *dialogViewController = [[QMUIDialogSelectionViewController alloc] init];
+    dialogViewController.title = @"选择课件来源";
+    dialogViewController.items = citys.allKeys;
+    dialogViewController.rowHeight = 56;
+    dialogViewController.titleLabelTextColor = VAMainTitleColor;
+    [dialogViewController addCancelButtonWithText:@"取消" block:nil];
+    [dialogViewController addSubmitButtonWithText:@"确定" block:^(QMUIDialogViewController *aDialogViewController) {
+        QMUIDialogSelectionViewController *d = (QMUIDialogSelectionViewController *)aDialogViewController;
+        if (d.selectedItemIndex == QMUIDialogSelectionViewControllerSelectedItemIndexNone) {
+            [QMUITips showError:@"请至少选一个" inView:d.qmui_modalPresentationViewController.view hideAfterDelay:1.2];
+            return;
+        }
+        NSString *city = d.items[d.selectedItemIndex];
+        NSString *resultString = (NSString *)[citys objectForKey:city];
+        weakify(self);
+        [aDialogViewController hideWithAnimated:YES completion:^(BOOL finished) {
+            strongify(self);
+            [self clickCourseSource:resultString];
+        }];
+    }];
+    [dialogViewController show];
+}
+
+#pragma mark - 点击课件来源 对应跳转
+-(void)clickCourseSource:(NSString *)sourceName{
+    if ([sourceName isEqualToString:@"制作课件"]) {
+        VAMakePlanController *makePlanVC = [[VAMakePlanController alloc]init];
+        [self.navigationController pushViewController:makePlanVC animated:YES];
+    }
+    else{
+        
+    }
+}
 @end

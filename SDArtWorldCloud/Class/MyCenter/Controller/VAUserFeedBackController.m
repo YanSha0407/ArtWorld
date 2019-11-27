@@ -9,7 +9,7 @@
 #import "VAUserFeedBackController.h"
 #import "VAPlaceholderTextView.h"
 #import "VAPhotoCollectionViewCell.h"
-#import "SystemInfo.h"
+#import "VASystemDeviceInfo.h"
 #import "VAPredicateMethod.h"
 
 @interface VAUserFeedBackController ()<UITextViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
