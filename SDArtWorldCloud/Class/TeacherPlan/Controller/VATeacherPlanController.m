@@ -35,6 +35,7 @@
 @property(nonatomic,strong)NSMutableArray *planMutableArray;
 @property(nonatomic,strong)NSMutableArray *classMutableArray;
 @property(nonatomic,strong)VAClassModel *classMainModel;
+@property(nonatomic,strong)VACalendarCourseModel *selectedCourseModel;
 @end
 
 @implementation VATeacherPlanController
@@ -50,6 +51,7 @@
 //    [self createRandomEvents];
     [self createMinAndMaxDate];
     [self initCalendarManager];
+    _dateSelected = [NSDate date];
     self.startTime = [[self dateFormatter] stringFromDate:[NSDate date]];
     self.endTime = self.startTime;
     if ([[VAAccountManager getAccount].user_role isEqualToString:@"student"]) {
@@ -250,6 +252,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row < self.planMutableArray.count) {
         VACalendarCourseModel *courseModel = self.planMutableArray[indexPath.row];
+        self.selectedCourseModel = courseModel;
         if (courseModel.class_content.length != 0) { //有课  跳到对应的查看课程界面
             
         }
@@ -441,6 +444,9 @@
 -(void)clickCourseSource:(NSString *)sourceName{
     if ([sourceName isEqualToString:@"制作课件"]) {
         VAMakePlanController *makePlanVC = [[VAMakePlanController alloc]init];
+        makePlanVC.classModel = self.classModel;
+        makePlanVC.courseModel = self.selectedCourseModel;
+        makePlanVC.planDate = [[self dateFormatter]stringFromDate:_dateSelected];
         [self.navigationController pushViewController:makePlanVC animated:YES];
     }
     else{

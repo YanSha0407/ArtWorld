@@ -26,6 +26,7 @@
 #import <SDAutoLayout.h>
 #import <MJRefresh.h>
 #import <MJExtension.h>
+#import <JXCategoryView.h>
 #import <CHTCollectionViewWaterfallLayout.h>
 #import <UIImageView+UIActivityIndicatorForSDWebImage.h>
 #endif /* VAPrefixHeader_pch */

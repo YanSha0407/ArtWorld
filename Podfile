@@ -7,6 +7,7 @@ target 'SDArtWorldCloud' do
   pod 'QMUIKit' , '~>4.0.0-beta'
   pod 'YYCache'
   pod 'JTCalendar'
+  pod 'JXCategoryView'
   pod 'MJExtension',:inhibit_warnings => true
   pod 'AFNetworking',:inhibit_warnings => true
   pod 'SDAutoLayout',:inhibit_warnings => true

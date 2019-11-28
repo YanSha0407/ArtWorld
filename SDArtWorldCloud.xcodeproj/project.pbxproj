@@ -30,6 +30,10 @@
 		E51743962385660300A7F050 /* VACategoryLeftTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E517438F2385660200A7F050 /* VACategoryLeftTableCell.m */; };
 		E51743972385660300A7F050 /* VACategoryLeftTabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51743902385660200A7F050 /* VACategoryLeftTabelView.m */; };
 		E517439D238567CC00A7F050 /* VACategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = E517439C238567CC00A7F050 /* VACategoryController.m */; };
+		E5194259238FAAE90060019E /* VABaseGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5194258238FAAE90060019E /* VABaseGroupController.m */; };
+		E519425C238FAB240060019E /* VAPictureGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519425B238FAB230060019E /* VAPictureGroupController.m */; };
+		E519425F238FAB330060019E /* VAVideoGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = E519425E238FAB330060019E /* VAVideoGroupController.m */; };
+		E5194262238FAEA40060019E /* VAGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5194261238FAEA40060019E /* VAGroupCell.m */; };
 		E5972000238E4F8E005E0CEB /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = E5971FFE238E4F8E005E0CEB /* UIColor+ColorChange.m */; };
 		E5972004238E502A005E0CEB /* YSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972002238E502A005E0CEB /* YSFileManager.m */; };
 		E5972007238E583B005E0CEB /* VAMakePlanController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972006238E583B005E0CEB /* VAMakePlanController.m */; };
@@ -38,7 +42,7 @@
 		E5972010238E5E0B005E0CEB /* VAFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E597200F238E5E0B005E0CEB /* VAFormModel.m */; };
 		E5972013238E5E51005E0CEB /* VAFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972012238E5E51005E0CEB /* VAFilterModel.m */; };
 		E5972016238E7318005E0CEB /* VAMakePlanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972015238E7318005E0CEB /* VAMakePlanModel.m */; };
-		E5972019238E7492005E0CEB /* VACourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972018238E7492005E0CEB /* VACourseDetailController.m */; };
+		E5972019238E7492005E0CEB /* VAPlanDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5972018238E7492005E0CEB /* VAPlanDetailController.m */; };
 		E5B35831238CF8740019FD1E /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B3582D238CF8740019FD1E /* PPNetworkHelper.m */; };
 		E5B35832238CF8740019FD1E /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B35830238CF8740019FD1E /* PPNetworkCache.m */; };
 		E5B35835238D22690019FD1E /* VACalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B35834238D22690019FD1E /* VACalendarModel.m */; };
@@ -193,6 +197,14 @@
 		E51743932385660300A7F050 /* VACategoryLeftTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VACategoryLeftTableCell.h; sourceTree = "<group>"; };
 		E517439B238567CC00A7F050 /* VACategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VACategoryController.h; sourceTree = "<group>"; };
 		E517439C238567CC00A7F050 /* VACategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VACategoryController.m; sourceTree = "<group>"; };
+		E5194257238FAAE90060019E /* VABaseGroupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VABaseGroupController.h; sourceTree = "<group>"; };
+		E5194258238FAAE90060019E /* VABaseGroupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VABaseGroupController.m; sourceTree = "<group>"; };
+		E519425A238FAB230060019E /* VAPictureGroupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAPictureGroupController.h; sourceTree = "<group>"; };
+		E519425B238FAB230060019E /* VAPictureGroupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAPictureGroupController.m; sourceTree = "<group>"; };
+		E519425D238FAB330060019E /* VAVideoGroupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAVideoGroupController.h; sourceTree = "<group>"; };
+		E519425E238FAB330060019E /* VAVideoGroupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAVideoGroupController.m; sourceTree = "<group>"; };
+		E5194260238FAEA40060019E /* VAGroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAGroupCell.h; sourceTree = "<group>"; };
+		E5194261238FAEA40060019E /* VAGroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAGroupCell.m; sourceTree = "<group>"; };
 		E5971FFE238E4F8E005E0CEB /* UIColor+ColorChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorChange.m"; sourceTree = "<group>"; };
 		E5971FFF238E4F8E005E0CEB /* UIColor+ColorChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorChange.h"; sourceTree = "<group>"; };
 		E5972002238E502A005E0CEB /* YSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFileManager.m; sourceTree = "<group>"; };
@@ -209,8 +221,8 @@
 		E5972012238E5E51005E0CEB /* VAFilterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAFilterModel.m; sourceTree = "<group>"; };
 		E5972014238E7318005E0CEB /* VAMakePlanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAMakePlanModel.h; sourceTree = "<group>"; };
 		E5972015238E7318005E0CEB /* VAMakePlanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAMakePlanModel.m; sourceTree = "<group>"; };
-		E5972017238E7492005E0CEB /* VACourseDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VACourseDetailController.h; sourceTree = "<group>"; };
-		E5972018238E7492005E0CEB /* VACourseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VACourseDetailController.m; sourceTree = "<group>"; };
+		E5972017238E7492005E0CEB /* VAPlanDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAPlanDetailController.h; sourceTree = "<group>"; };
+		E5972018238E7492005E0CEB /* VAPlanDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAPlanDetailController.m; sourceTree = "<group>"; };
 		E5B3582D238CF8740019FD1E /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
 		E5B3582E238CF8740019FD1E /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
 		E5B3582F238CF8740019FD1E /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
@@ -660,6 +672,8 @@
 				E5972009238E59E0005E0CEB /* VAMakePlanView.m */,
 				E5B6CF3F2387BE1800A9B6B4 /* VAPlanCell.h */,
 				E5B6CF402387BE1800A9B6B4 /* VAPlanCell.m */,
+				E5194260238FAEA40060019E /* VAGroupCell.h */,
+				E5194261238FAEA40060019E /* VAGroupCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -700,8 +714,14 @@
 				E5B6CF5F2387D24900A9B6B4 /* VAClassController.m */,
 				E5972005238E583B005E0CEB /* VAMakePlanController.h */,
 				E5972006238E583B005E0CEB /* VAMakePlanController.m */,
-				E5972017238E7492005E0CEB /* VACourseDetailController.h */,
-				E5972018238E7492005E0CEB /* VACourseDetailController.m */,
+				E5972017238E7492005E0CEB /* VAPlanDetailController.h */,
+				E5972018238E7492005E0CEB /* VAPlanDetailController.m */,
+				E5194257238FAAE90060019E /* VABaseGroupController.h */,
+				E5194258238FAAE90060019E /* VABaseGroupController.m */,
+				E519425A238FAB230060019E /* VAPictureGroupController.h */,
+				E519425B238FAB230060019E /* VAPictureGroupController.m */,
+				E519425D238FAB330060019E /* VAVideoGroupController.h */,
+				E519425E238FAB330060019E /* VAVideoGroupController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1287,6 +1307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5194262238FAEA40060019E /* VAGroupCell.m in Sources */,
 				E50D0D5C2382648100736223 /* VAPlaceholderTextView.m in Sources */,
 				E5972007238E583B005E0CEB /* VAMakePlanController.m in Sources */,
 				E50D0D542382648100736223 /* VAUserFeedBackController.m in Sources */,
@@ -1296,7 +1317,7 @@
 				E5F719692382763D007DE9C1 /* ZFSliderView.m in Sources */,
 				E5B6CF922387E7D600A9B6B4 /* VAAccountManager.m in Sources */,
 				E5F7195B2382763D007DE9C1 /* ZFPlayerNotification.m in Sources */,
-				E5972019238E7492005E0CEB /* VACourseDetailController.m in Sources */,
+				E5972019238E7492005E0CEB /* VAPlanDetailController.m in Sources */,
 				E5B6CF602387D24900A9B6B4 /* VAClassController.m in Sources */,
 				E5BCB25C2382992E00EAF717 /* UIButton+Extension.m in Sources */,
 				E5F7196A2382763D007DE9C1 /* ZFPlayerControlView.m in Sources */,
@@ -1340,6 +1361,7 @@
 				E5BCB23B2382896200EAF717 /* KSMediaPlayerManager.m in Sources */,
 				E5F719602382763D007DE9C1 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				E5F7196D2382763D007DE9C1 /* ZFSpeedLoadingView.m in Sources */,
+				E519425C238FAB240060019E /* VAPictureGroupController.m in Sources */,
 				E5BCB2212382896200EAF717 /* ZFPlayerGestureControl.m in Sources */,
 				E5BCB2292382896200EAF717 /* ZFKVOController.m in Sources */,
 				E5BCB2262382896200EAF717 /* ZFPlayerNotification.m in Sources */,
@@ -1352,6 +1374,7 @@
 				E5B35835238D22690019FD1E /* VACalendarModel.m in Sources */,
 				E5F719632382763D007DE9C1 /* ZFUtilities.m in Sources */,
 				E5BCB22A2382896200EAF717 /* ZFReachabilityManager.m in Sources */,
+				E519425F238FAB330060019E /* VAVideoGroupController.m in Sources */,
 				E5972013238E5E51005E0CEB /* VAFilterModel.m in Sources */,
 				E50D0D5A2382648100736223 /* VAMyTableHeaderView.m in Sources */,
 				E50D0D002382638900736223 /* main.m in Sources */,
@@ -1366,6 +1389,7 @@
 				E51743972385660300A7F050 /* VACategoryLeftTabelView.m in Sources */,
 				E5F719772382763D007DE9C1 /* UIWindow+Extensions.m in Sources */,
 				E5F719592382763D007DE9C1 /* ZFPlayerLogManager.m in Sources */,
+				E5194259238FAAE90060019E /* VABaseGroupController.m in Sources */,
 				E5B6CF3B23879E4900A9B6B4 /* VATeacherPlanController.m in Sources */,
 				E5F719662382763D007DE9C1 /* ZFLandScapeControlView.m in Sources */,
 				E5F719732382763D007DE9C1 /* AppDelegate.m in Sources */,

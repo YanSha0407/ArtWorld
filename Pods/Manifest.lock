@@ -19,6 +19,7 @@ PODS:
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
   - iCarousel (1.8.3)
   - JTCalendar (2.2.5)
+  - JXCategoryView (1.5.2)
   - JXPagingView/Pager (1.1.19)
   - Masonry (1.1.0)
   - MJExtension (3.2.1)
@@ -327,6 +328,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - iCarousel
   - JTCalendar
+  - JXCategoryView
   - JXPagingView/Pager
   - Masonry
   - MJExtension
@@ -343,6 +345,7 @@ SPEC REPOS:
     - CHTCollectionViewWaterfallLayout
     - iCarousel
     - JTCalendar
+    - JXCategoryView
     - JXPagingView
     - Masonry
     - MJExtension
@@ -359,6 +362,7 @@ SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   JTCalendar: 4056fd48735e1148b487acad35d72faea2387b25
+  JXCategoryView: b284d35a7a8772eada05dd78642233e1eb763ea8
   JXPagingView: d28c0e245b850cdb47e3f04c07d8c35e30c18531
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
@@ -370,6 +374,6 @@ SPEC CHECKSUMS:
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: cf210d4403bbf6d3bb96d73590f3e16a78c08e4b
+PODFILE CHECKSUM: bcaaf9a3d56c2c72d9d24166ba64495d0ad3ed01
 
 COCOAPODS: 1.7.5

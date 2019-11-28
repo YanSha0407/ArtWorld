@@ -26,7 +26,7 @@
 #define LT_TEXT_SHADOW_OFFSET CGSizeMake(0.0f, 1.0f)
 #define LT_BOARD_COLOR   [UIColor colorWithRed:190/255.0 green:195/255.0 blue:200/255.0 alpha:1.000].CGColor //边框颜色
 
-#define LT_BORDER_WIDTH 1.0f
+#define LT_BORDER_WIDTH 0.8f
 #define LT_BUTTON_HEIGHT 40 //高
 #define LT_IPHONE_BUTTON_HEIGHT 30 //高
 @implementation VAMakePlanView
@@ -103,17 +103,17 @@
     } else {
       [ltBtn setBackgroundColor:self.btnBgColor];
     }
-    [ltBtn setTitleColor:VAMainTitleColor forState:UIControlStateNormal];
-    [ltBtn setTitleColor:VAMainTitleColor forState:UIControlStateSelected];
+    [ltBtn setTitleColor:RGBAColor(68, 68, 68, 0.7) forState:UIControlStateNormal];
+    [ltBtn setTitleColor:RGBAColor(68, 68, 68, 1) forState:UIControlStateSelected];
     [ltBtn setTitle:subjectModel.name forState:UIControlStateNormal];
     [ltBtn.titleLabel setShadowColor:LT_TEXT_SHADOW_COLOR];
     [ltBtn.titleLabel setShadowOffset:LT_TEXT_SHADOW_OFFSET];
     [ltBtn.layer setMasksToBounds:YES];
-    [ltBtn.layer setBorderColor:VAMainSepColor.CGColor];
+    [ltBtn.layer setBorderColor:RGBAColor(231, 231, 231, 0.5).CGColor];
     [ltBtn.layer setBorderWidth: LT_BORDER_WIDTH];
     KClipsCornerRadius(ltBtn, 3);
     if (IS_IPAD) {
-      ltBtn.titleLabel.font = [UIFont systemFontOfSize:LT_FONT_SIZE];
+      ltBtn.titleLabel.font = [UIFont systemFontOfSize:LT_BORDER_WIDTH];
     }
     else{
       ltBtn.titleLabel.font = VAMainTitleFont;
@@ -135,7 +135,7 @@
   [self.btn.layer setBorderColor:VAMainSepColor.CGColor];
   self.btn.selected=NO;
   tag.selected=YES;
-  [tag.layer setBorderColor:VAMainAppColor.CGColor];
+  [tag.layer setBorderColor:RGBAColor(68, 68, 68, 1.0).CGColor];
   self.btn=tag;
   if (self.block) {
     self.block(tags.tag);
