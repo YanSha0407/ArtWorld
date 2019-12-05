@@ -138,7 +138,7 @@
             }];
         }
         else{
-            [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+            VANetWorkError
         }
     }
 }
@@ -163,7 +163,7 @@
         }];
     }
     else{
-        [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+        VANetWorkError
     }
 }
 #pragma mark - 获取上课形式
@@ -181,7 +181,7 @@
         }];
     }
     else{
-        [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+        VANetWorkError
     }
 }
 -(void)loadClassFormAndSubjectButton:(VAMakePlanTextType) textType{

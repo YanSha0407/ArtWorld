@@ -1,8 +1,8 @@
 //
-//  VABaseGroupController.h
+//  VABasePictureListController.h
 //  SDArtWorldCloud
 //
-//  Created by metis on 2019/11/28.
+//  Created by metis on 2019/12/5.
 //  Copyright © 2019 Sudo. All rights reserved.
 //
 
@@ -10,13 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VABaseGroupController : VABaseViewController<JXCategoryListContentViewDelegate>
-@property (nonatomic,assign) CGRect rect;
+@interface VABasePictureListController : VABaseViewController
+@property(nonatomic,assign)CGRect rect;
 @property (assign, nonatomic) NSInteger columnCount;
 @property (strong, nonatomic) NSString *cellNibName;
-@property (assign, nonatomic) BOOL isShowAddBtu;
 @property (strong, nonatomic) NSMutableArray *groupMutableArray;
--(void)reloadCollectionData;
 @end
 
 NS_ASSUME_NONNULL_END

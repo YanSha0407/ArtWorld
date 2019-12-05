@@ -10,5 +10,5 @@
 #define VAMessage_h
 
 #define VANetWorkErrorMessage  @"暂无网络，请稍后再试~"// 无网络提示
-
+#define VANetWorkError [TLUIUtility showErrorHint:VANetWorkErrorMessage];
 #endif /* VAMessage_h */

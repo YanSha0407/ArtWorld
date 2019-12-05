@@ -62,7 +62,7 @@
             }];
         }
         else{
-            [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+            VANetWorkError
         }
     }
 }

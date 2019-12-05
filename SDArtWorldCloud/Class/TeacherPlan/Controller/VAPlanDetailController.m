@@ -41,7 +41,6 @@
         else{
             _categoryView.titles = @[@"图片", @"视频",@"文字"];
         }
-        
        _categoryView.listContainer = self.listContainerView;
        _categoryView.titleColor = VAWhiteColor;
        _categoryView.titleSelectedColor = VAWhiteColor;
@@ -74,6 +73,7 @@
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
     if (index == 0) {
         VAPictureGroupController *pictureGroup = [[VAPictureGroupController alloc]init];
+        pictureGroup.planModel = self.makePlanModel;
         return pictureGroup;
     }
     else if (index ==1){

@@ -18,4 +18,5 @@
 #define kGetClassFormData [NSString stringWithFormat:@"%@%@",YXHeaderResquest,@"instruction-method/get-list"] //获取上课形式
 #define kGetSubjectData [NSString stringWithFormat:@"%@%@",YXHeaderResquest,@"category/get-list"] //获取所属科目
 #define kMakePlanData [NSString stringWithFormat:@"%@%@",YXHeaderResquest,@"course/create"] //创建课件
+#define kCreatGroupData(url) [NSString stringWithFormat:@"%@%@",YXHeaderResquest,url] //创建分组 10是图片 20是视频
 #endif /* VAURLFile_h */

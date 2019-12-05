@@ -203,7 +203,7 @@
         }];
     }
     else{
-        [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+        VANetWorkError
     }
 }
 
@@ -228,7 +228,7 @@
             }];
         }
         else{
-            [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+            VANetWorkError
         }
     }
 }

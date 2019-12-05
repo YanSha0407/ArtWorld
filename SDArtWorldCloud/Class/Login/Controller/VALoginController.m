@@ -86,7 +86,7 @@
         }];
     }
     else{
-        [TLUIUtility showErrorHint:VANetWorkErrorMessage];
+        VANetWorkError
     }
 }
 -(UIView *)loginBgView{
