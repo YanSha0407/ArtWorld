@@ -24,9 +24,16 @@
     if (!_pictureView) {
         _pictureView = [[UIImageView alloc]init];
         _pictureView.frame = self.bounds;
+        _pictureView.contentMode = UIViewContentModeScaleAspectFill;
         _pictureView.backgroundColor = VAGrayUnUseColor;
         KClipsCornerRadius(_pictureView, 3);
     }
     return _pictureView;
+}
+-(void)setPictureModel:(VAPictureModel *)pictureModel{
+    _pictureModel = pictureModel;
+    NSString *str = [NSString stringWithFormat:@"%@%@",self.pictureModel.image,self.pictureModel.size.image_thumb];
+    [self.pictureView setImageWithURL:VAURL(str) usingActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
+    
 }
 @end

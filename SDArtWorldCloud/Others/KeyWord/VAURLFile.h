@@ -19,4 +19,5 @@
 #define kGetSubjectData [NSString stringWithFormat:@"%@%@",YXHeaderResquest,@"category/get-list"] //获取所属科目
 #define kMakePlanData [NSString stringWithFormat:@"%@%@",YXHeaderResquest,@"course/create"] //创建课件
 #define kCreatGroupData(url) [NSString stringWithFormat:@"%@%@",YXHeaderResquest,url] //创建分组 10是图片 20是视频
+#define kGetPritureData [NSString stringWithFormat:@"%@%@",YXHeaderResquest,@"picture/getmeis-list"] //获取美术圈图片数据
 #endif /* VAURLFile_h */

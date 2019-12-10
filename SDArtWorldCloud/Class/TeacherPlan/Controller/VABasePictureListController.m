@@ -64,12 +64,32 @@
 -(void)footerRefreshBegin{
   
 }
+-(void)reloadCollectionData{
+    [self.baseCollectionVC reloadData];
+}
 #pragma mark ---- UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    if (self.isShowAddPictureBtn) {
+        if (self.groupMutableArray.count) {
+            return self.groupMutableArray.count + 1;
+        }else{
+            return 10;
+        }
+    }
+    else{
+         if (self.groupMutableArray.count) {
+             return self.groupMutableArray.count;
+         }else{
+             return 10;
+         }
+    }
+   
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     VAPictureCell *pictureCell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellNibName forIndexPath:indexPath];
+    if (self.groupMutableArray.count) {
+        pictureCell.pictureModel = self.groupMutableArray[indexPath.row];
+    }
     return pictureCell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -48,7 +48,6 @@
     [self.view addSubview:self.planTableView];
     [self.view layoutSubviews];
     self.calendarManager = [JTCalendarManager new];
-//    [self createRandomEvents];
     [self createMinAndMaxDate];
     [self initCalendarManager];
     _dateSelected = [NSDate date];

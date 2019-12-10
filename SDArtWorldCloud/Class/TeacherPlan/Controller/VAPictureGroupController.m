@@ -7,7 +7,7 @@
 //
 
 #import "VAPictureGroupController.h"
-#import "VABasePictureListController.h"
+#import "VAPictureGroupListController.h"
 #import "VAGroupModel.h"
 @interface VAPictureGroupController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)NSString *groupName;
@@ -32,7 +32,7 @@
         [self showReturnKeyDialogViewController];
     }
     else{
-        VABasePictureListController *basePicture = [[VABasePictureListController alloc]init];
+        VAPictureGroupListController *basePicture = [[VAPictureGroupListController alloc]init];
         basePicture.title = @"图片分组";
         [self.navigationController pushViewController:basePicture animated:YES];
     }
@@ -62,8 +62,11 @@
         NSDictionary *dic = @{@"name":name,@"course_material_id":self.planModel.course_material_id,@"type":@"10"};
         [PPNetworkHelper POST:kCreatGroupData(@"course-material/create") parameters:dic success:^(id responseObject) {
             if ([responseObject[@"success"] integerValue] == 1) {
-                [QMUITips showSucceed:@"创建成功" inView:self.view hideAfterDelay:1.2];
                 VAGroupModel *groupModel = [VAGroupModel mj_objectWithKeyValues:responseObject[@"data"]];
+                VAPictureGroupListController *basePicture = [[VAPictureGroupListController alloc]init];
+                basePicture.groupModel = groupModel;
+                basePicture.title = @"图片分组";
+                [self.navigationController pushViewController:basePicture animated:YES];
                 [self.groupMutableArray insertObject:groupModel atIndex:0];
                 [self reloadCollectionData];
             }

@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSInteger columnCount;
 @property (strong, nonatomic) NSString *cellNibName;
 @property (strong, nonatomic) NSMutableArray *groupMutableArray;
+@property (assign, nonatomic) BOOL isShowAddPictureBtn;
+-(void)reloadCollectionData;
 @end
 
 NS_ASSUME_NONNULL_END

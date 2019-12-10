@@ -66,95 +66,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C9206B49-9CEF-4779-8362-AE110C5F8615"
-            shouldBeEnabled = "Yes"
+            uuid = "D09899F2-25C6-4BFE-B268-F42D72EC85F4"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupController.m"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupListController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-showReturnKeyDialogViewController"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0968092A-1BC7-46BF-ABFD-86CC9196E465"
-            shouldBeEnabled = "Yes"
+            uuid = "ADA63747-4161-4749-A149-C22FD61CFBD8"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupController.m"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupListController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-showReturnKeyDialogViewController"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E91738C2-19BE-4FA8-A5A6-01A5CC05D60B"
+            uuid = "387071C8-C1F8-4599-A4F4-88AE4FF413C9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupController.m"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAMSQPictureListController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-addPictureGroup:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ADA7553E-1976-4C02-8277-477A40EFB725"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-addPictureGroup:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-getMSQPicture"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "ADA7553E-1976-4C02-8277-477A40EFB725 - 61e0d5af762dfd44"
+                  uuid = "387071C8-C1F8-4599-A4F4-88AE4FF413C9 - 75b034204d8618e0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[VAPictureGroupController addPictureGroup:]"
+                  symbolName = "-[VAMSQPictureListController getMSQPicture]"
                   moduleName = "&#x7f8e;&#x672f;&#x4e16;&#x754c;"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/metis/Desktop/NewArtWorld/ArtWorldCloud/SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupController.m"
+                  urlString = "file:///Users/metis/Desktop/NewArtWorld/ArtWorldCloud/SDArtWorldCloud/Class/TeacherPlan/Controller/VAMSQPictureListController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "353">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "442">
                </Location>
                <Location
-                  uuid = "ADA7553E-1976-4C02-8277-477A40EFB725 - d3461d18d2f650c8"
+                  uuid = "387071C8-C1F8-4599-A4F4-88AE4FF413C9 - 41f75122d0c2a6d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__44-[VAPictureGroupController addPictureGroup:]_block_invoke"
+                  symbolName = "__43-[VAMSQPictureListController getMSQPicture]_block_invoke"
                   moduleName = "&#x7f8e;&#x672f;&#x4e16;&#x754c;"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/metis/Desktop/NewArtWorld/ArtWorldCloud/SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupController.m"
+                  urlString = "file:///Users/metis/Desktop/NewArtWorld/ArtWorldCloud/SDArtWorldCloud/Class/TeacherPlan/Controller/VAMSQPictureListController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "51">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -162,16 +146,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "56E97161-18E5-42F6-886F-AFC7A348AC10"
+            uuid = "588DCF29-9580-4408-A6CE-C6B9F56856F8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAPictureGroupController.m"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAMSQPictureListController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-addPictureGroup:"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-getMSQPicture"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "861EE26C-2E22-447F-A8BC-A5F39D2000B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDArtWorldCloud/Class/TeacherPlan/Controller/VAMSQPictureListController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-footerRefreshBegin"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
